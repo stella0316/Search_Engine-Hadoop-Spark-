@@ -1,0 +1,1423 @@
+{
+  "meta" : {
+    "view" : {
+      "id" : "zmut-au2w",
+      "name" : "DYCD after-school programs: Immigrant Services",
+      "attribution" : "Department of Youth and Community Development (DYCD)",
+      "averageRating" : 0,
+      "category" : "Social Services",
+      "createdAt" : 1314994451,
+      "description" : "Facilities in New York City, by agency and site, that offer after-school programs for immigration services and immigrant support services. These include programs for legal assistance, legal services, refugee assistance, immigrant youth services, immigrant family services, and domestic violence programs.- Department of Youth and Community Development (DYCD). \r\nUpdate Frequency: Annually",
+      "displayType" : "table",
+      "downloadCount" : 1805,
+      "hideFromCatalog" : false,
+      "hideFromDataJson" : false,
+      "indexUpdatedAt" : 1514395075,
+      "newBackend" : false,
+      "numberOfComments" : 0,
+      "oid" : 26807239,
+      "provenance" : "official",
+      "publicationAppendEnabled" : false,
+      "publicationDate" : 1505504814,
+      "publicationGroup" : 240070,
+      "publicationStage" : "published",
+      "rowClass" : "",
+      "rowsUpdatedAt" : 1505504794,
+      "rowsUpdatedBy" : "d5dp-fses",
+      "tableId" : 14465856,
+      "totalTimesRated" : 0,
+      "viewCount" : 870,
+      "viewLastModified" : 1515171304,
+      "viewType" : "tabular",
+      "columns" : [ {
+        "id" : -1,
+        "name" : "sid",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":sid",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "id",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":id",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "position",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":position",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "created_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "created_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "updated_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "updated_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : 320392364,
+        "name" : "PROGRAM TYPE",
+        "dataTypeName" : "text",
+        "fieldName" : "program_type",
+        "position" : 1,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1514740,
+        "width" : 244,
+        "cachedContents" : {
+          "largest" : "Immigration Services,Immigrant Support Services,NDA Programs",
+          "non_null" : 78,
+          "null" : 0,
+          "top" : [ {
+            "item" : "Immigration Services,Immigrant Support Services",
+            "count" : 20
+          }, {
+            "item" : "Immigration Services,Immigrant Support Services,NDA Programs",
+            "count" : 19
+          } ],
+          "smallest" : "Immigration Services,Immigrant Support Services"
+        },
+        "format" : { }
+      }, {
+        "id" : 320392365,
+        "name" : "PROGRAM",
+        "dataTypeName" : "text",
+        "fieldName" : "program",
+        "position" : 2,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1514741,
+        "width" : 184,
+        "cachedContents" : {
+          "largest" : "Services - Immigrant Families",
+          "non_null" : 78,
+          "null" : 0,
+          "top" : [ {
+            "item" : "Legal Services",
+            "count" : 20
+          }, {
+            "item" : "Legal Assistance Program",
+            "count" : 19
+          }, {
+            "item" : "Domestic Violence Program",
+            "count" : 18
+          }, {
+            "item" : "Services - Immigrant Families",
+            "count" : 17
+          }, {
+            "item" : "NDA Immigrants",
+            "count" : 16
+          }, {
+            "item" : "Legal Services - Immigrant Youth",
+            "count" : 15
+          }, {
+            "item" : "Immigrant/Refugee Assistance",
+            "count" : 14
+          }, {
+            "item" : "NDA Immigrats",
+            "count" : 13
+          } ],
+          "smallest" : "Domestic Violence Program"
+        },
+        "format" : { }
+      }, {
+        "id" : 320392366,
+        "name" : "SITE NAME",
+        "dataTypeName" : "text",
+        "fieldName" : "site_name",
+        "position" : 3,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1514742,
+        "width" : 208,
+        "cachedContents" : {
+          "largest" : "York College Immigration     Center ? CUNY ",
+          "non_null" : 78,
+          "null" : 0,
+          "top" : [ {
+            "item" : "Citizens Advice Bureau - Immigration Assistance Center",
+            "count" : 20
+          }, {
+            "item" : "Cabrini Immigrant Services (Admin & Activity site)",
+            "count" : 19
+          }, {
+            "item" : "COJO Flatbush",
+            "count" : 18
+          }, {
+            "item" : "CAMBA",
+            "count" : 17
+          }, {
+            "item" : "The Door",
+            "count" : 16
+          }, {
+            "item" : "The Lower Manhattan Neighborhood Office",
+            "count" : 15
+          }, {
+            "item" : "Chinese Consolidated Benevolent Asociation of New York",
+            "count" : 14
+          }, {
+            "item" : "Queens Family Justice Center",
+            "count" : 13
+          }, {
+            "item" : "Jewish Board of Family and Children Services  - Transition Center",
+            "count" : 12
+          }, {
+            "item" : "Goodwill Industries of Greater New York & Northern NJ, Refugee and Immigrant Services (Program Site 1)",
+            "count" : 11
+          }, {
+            "item" : "Kensington Self-Help ",
+            "count" : 10
+          }, {
+            "item" : "Tolentine -Zeiser Community Life Center/ St, Rita",
+            "count" : 9
+          }, {
+            "item" : "United Communities Centers ",
+            "count" : 8
+          }, {
+            "item" : "JFK High School - Children's Arts & Science",
+            "count" : 7
+          }, {
+            "item" : "Alianza Dominicana, Inc. (Admin & Activity site)",
+            "count" : 6
+          }, {
+            "item" : "Catholic Charities Community Service, Archdiocese of N Y",
+            "count" : 5
+          }, {
+            "item" : "Southside Community Mission",
+            "count" : 4
+          }, {
+            "item" : "Make the Road New York",
+            "count" : 3
+          }, {
+            "item" : "Sanctuary for Families",
+            "count" : 2
+          }, {
+            "item" : "Henry Street Settlement - Workforce Development Center ",
+            "count" : 1
+          } ],
+          "smallest" : "Alianza Dominicana, Inc. (Admin & Activity site)"
+        },
+        "format" : { }
+      }, {
+        "id" : 320392367,
+        "name" : "BOROUGH / COMMUNITY",
+        "dataTypeName" : "text",
+        "fieldName" : "borough_community",
+        "position" : 4,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1514743,
+        "width" : 328,
+        "cachedContents" : {
+          "largest" : "Staten Island",
+          "non_null" : 78,
+          "null" : 0,
+          "top" : [ {
+            "item" : "Manhattan,Bronx,Queens,Staten Island, Brooklyn",
+            "count" : 20
+          }, {
+            "item" : "Manhattan",
+            "count" : 19
+          }, {
+            "item" : "Brooklyn",
+            "count" : 18
+          }, {
+            "item" : "Bronx",
+            "count" : 17
+          }, {
+            "item" : "Queens",
+            "count" : 16
+          }, {
+            "item" : "Staten Island",
+            "count" : 15
+          }, {
+            "item" : "Jackson Heights",
+            "count" : 14
+          }, {
+            "item" : "Forest Hills",
+            "count" : 13
+          }, {
+            "item" : "Jamaica",
+            "count" : 12
+          }, {
+            "item" : "Kew Gardens",
+            "count" : 11
+          } ],
+          "smallest" : "Bronx"
+        },
+        "format" : { }
+      }, {
+        "id" : 320392368,
+        "name" : "AGENCY",
+        "dataTypeName" : "text",
+        "fieldName" : "agency",
+        "position" : 5,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1514744,
+        "width" : 172,
+        "cachedContents" : {
+          "largest" : "Urban Justice Center",
+          "non_null" : 78,
+          "null" : 0,
+          "top" : [ {
+            "item" : "Sanctuary for Families, Inc.",
+            "count" : 20
+          }, {
+            "item" : "Safe Horizon, Inc.",
+            "count" : 19
+          }, {
+            "item" : "New York Legal Assistance Group (NYLAG)",
+            "count" : 18
+          }, {
+            "item" : "The Legal Aid Society",
+            "count" : 17
+          }, {
+            "item" : "Children's Arts & Science Workshops, Inc.",
+            "count" : 16
+          }, {
+            "item" : "Northern Manhattan              Improvement Corporation",
+            "count" : 15
+          }, {
+            "item" : "Catholic Charities Community Service, Archdiocese of N Y",
+            "count" : 14
+          }, {
+            "item" : "Federation of Employment and Guidance Services, Inc.",
+            "count" : 13
+          }, {
+            "item" : "Citizens Advice Bureau",
+            "count" : 12
+          }, {
+            "item" : "Goodwill Industries of Greater New York",
+            "count" : 11
+          }, {
+            "item" : "Children's Arts & Sciences Workshops",
+            "count" : 10
+          }, {
+            "item" : "Research Foundation of CUNY",
+            "count" : 9
+          }, {
+            "item" : "Make the Road New York",
+            "count" : 8
+          }, {
+            "item" : "New Immigrant Community Empowerment (NICE)",
+            "count" : 7
+          }, {
+            "item" : "Urban Justice Center",
+            "count" : 6
+          }, {
+            "item" : "Sanctuary for Families",
+            "count" : 5
+          }, {
+            "item" : "Big Brothers/Big Sisters, Inc.",
+            "count" : 4
+          }, {
+            "item" : "Southside Community Mission, Inc.",
+            "count" : 3
+          }, {
+            "item" : "Safe Space",
+            "count" : 2
+          }, {
+            "item" : "Queens Community House, Inc.",
+            "count" : 1
+          } ],
+          "smallest" : "Alianza Dominicana, Inc."
+        },
+        "format" : { }
+      }, {
+        "id" : 320392369,
+        "name" : "Contact Number",
+        "dataTypeName" : "text",
+        "fieldName" : "contact_number",
+        "position" : 6,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1514745,
+        "width" : 268,
+        "cachedContents" : {
+          "largest" : "718-940-6311 ",
+          "non_null" : 77,
+          "null" : 1,
+          "top" : [ {
+            "item" : "212.349.6009           ext. 264",
+            "count" : 20
+          }, {
+            "item" : "212.613.5098",
+            "count" : 19
+          }, {
+            "item" : "212.613.5000",
+            "count" : 18
+          }, {
+            "item" : "212-923-7766",
+            "count" : 17
+          }, {
+            "item" : "212-822-8319",
+            "count" : 16
+          }, {
+            "item" : "212-577-3292 ",
+            "count" : 15
+          }, {
+            "item" : "212-349-6009",
+            "count" : 14
+          }, {
+            "item" : "212-613-5000",
+            "count" : 13
+          }, {
+            "item" : "212-419-3700",
+            "count" : 12
+          }, {
+            "item" : "718.782.8181 or 718.387.6052 ",
+            "count" : 11
+          }, {
+            "item" : "718-727-1222 718 418-7690 X 205 ",
+            "count" : 10
+          }, {
+            "item" : "212.349.6009          ",
+            "count" : 9
+          }, {
+            "item" : "212.766.9200",
+            "count" : 8
+          }, {
+            "item" : "212.206.3440 ext. 237",
+            "count" : 7
+          }, {
+            "item" : "212.994.7742",
+            "count" : 6
+          }, {
+            "item" : "212-822-8300",
+            "count" : 5
+          }, {
+            "item" : "718.457.4591",
+            "count" : 4
+          }, {
+            "item" : "718.565.8500",
+            "count" : 3
+          }, {
+            "item" : "718.463.0434",
+            "count" : 2
+          }, {
+            "item" : "718.743.0575",
+            "count" : 1
+          } ],
+          "smallest" : "212.206.3440 ext. 237"
+        },
+        "format" : { }
+      }, {
+        "id" : 320392370,
+        "name" : "Grade Level / Age Group ",
+        "dataTypeName" : "text",
+        "fieldName" : "grade_level_age_group",
+        "position" : 7,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1514746,
+        "width" : 388,
+        "cachedContents" : {
+          "largest" : "ESOL/Civics",
+          "non_null" : 78,
+          "null" : 0,
+          "top" : [ {
+            "item" : "All Ages",
+            "count" : 20
+          }, {
+            "item" : "Adult",
+            "count" : 19
+          }, {
+            "item" : "11+",
+            "count" : 18
+          }, {
+            "item" : "18+",
+            "count" : 17
+          }, {
+            "item" : "20-May",
+            "count" : 16
+          }, {
+            "item" : "14-Nov",
+            "count" : 15
+          }, {
+            "item" : "ESOL/Civics",
+            "count" : 14
+          } ],
+          "smallest" : "11+"
+        },
+        "format" : { }
+      }, {
+        "id" : 320392371,
+        "name" : "Location 1",
+        "dataTypeName" : "location",
+        "fieldName" : "location_1",
+        "position" : 8,
+        "renderTypeName" : "location",
+        "tableColumnId" : 1514747,
+        "width" : 220,
+        "cachedContents" : {
+          "largest" : {
+            "latitude" : "40.877210772673564",
+            "human_address" : "{\"address\":\"99 Terrace View Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10463\"}",
+            "longitude" : "-73.91213621128965"
+          },
+          "non_null" : 75,
+          "null" : 3,
+          "top" : [ {
+            "item" : {
+              "latitude" : "40.575793969703795",
+              "human_address" : "{\"address\":\"3300 Coney Island Av\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11235\"}",
+              "longitude" : "-73.95950745079742"
+            },
+            "count" : 20
+          }, {
+            "item" : {
+              "latitude" : "40.72398399739069",
+              "human_address" : "{\"address\":\"121 6th Avenue\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10013\"}",
+              "longitude" : "-74.00464968039944"
+            },
+            "count" : 19
+          }, {
+            "item" : {
+              "latitude" : "40.70708573646016",
+              "human_address" : "{\"address\":\"199 Water Street\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10038\"}",
+              "longitude" : "-74.00463169395886"
+            },
+            "count" : 18
+          }, {
+            "item" : {
+              "latitude" : "40.71607633471377",
+              "human_address" : "{\"address\":\"62 Mott St\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10013\"}",
+              "longitude" : "-73.9981586658295"
+            },
+            "count" : 17
+          }, {
+            "item" : {
+              "latitude" : "40.708286075142325",
+              "human_address" : "{\"address\":\"126 02 82nd Ave Kew Gardens\",\"city\":\"NEW YORK\",\"state\":\"\",\"zip\":\"11415\"}",
+              "longitude" : "-73.82855612156771"
+            },
+            "count" : 16
+          }, {
+            "item" : {
+              "latitude" : "40.600614338480966",
+              "human_address" : "{\"address\":\"629 Far\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11691\"}",
+              "longitude" : "-73.76256777468302"
+            },
+            "count" : 15
+          }, {
+            "item" : {
+              "latitude" : "40.61789996472653",
+              "human_address" : "{\"address\":\"1416 Avenue\",\"city\":\"M Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11230\"}",
+              "longitude" : "-73.96077504128672"
+            },
+            "count" : 14
+          }, {
+            "item" : {
+              "latitude" : "40.64409707953028",
+              "human_address" : "{\"address\":\"419 Church Ave\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11218\"}",
+              "longitude" : "-73.97640972645803"
+            },
+            "count" : 13
+          }, {
+            "item" : {
+              "latitude" : "40.869693003729196",
+              "human_address" : "{\"address\":\"2342 Andrews Av (near Fordham Rd\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10468\"}",
+              "longitude" : "-73.89892699248668"
+            },
+            "count" : 12
+          }, {
+            "item" : {
+              "latitude" : "40.66472649825768",
+              "human_address" : "{\"address\":\"613 New Lots Ave\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11207\"}",
+              "longitude" : "-73.88659110359023"
+            },
+            "count" : 11
+          }, {
+            "item" : {
+              "latitude" : "40.877210772673564",
+              "human_address" : "{\"address\":\"99 Terrace View Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10463\"}",
+              "longitude" : "-73.91213621128965"
+            },
+            "count" : 10
+          }, {
+            "item" : {
+              "latitude" : "40.83927054580515",
+              "human_address" : "{\"address\":\"1257 Ogden Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10452\"}",
+              "longitude" : "-73.92578827979769"
+            },
+            "count" : 9
+          }, {
+            "item" : {
+              "latitude" : "40.7572783324888",
+              "human_address" : "{\"address\":\"1011 First Avenue\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10022\"}",
+              "longitude" : "-73.96371387829234"
+            },
+            "count" : 8
+          }, {
+            "item" : {
+              "latitude" : "40.70499449388848",
+              "human_address" : "{\"address\":\"280 Marcy Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11211\"}",
+              "longitude" : "-73.95589166067984"
+            },
+            "count" : 7
+          }, {
+            "item" : {
+              "latitude" : "40.63093452909704",
+              "human_address" : "{\"address\":\"479 Port Richmond Avenue Staten Island\",\"city\":\"NEW YORK\",\"state\":\"\",\"zip\":\"10302\"}",
+              "longitude" : "-74.13901464968129"
+            },
+            "count" : 6
+          }, {
+            "item" : {
+              "latitude" : "40.70545300025583",
+              "human_address" : "{\"address\":\"1406 Wall Street Station\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10268\"}",
+              "longitude" : "-74.00695600011926"
+            },
+            "count" : 5
+          }, {
+            "item" : {
+              "latitude" : "40.71844741559961",
+              "human_address" : "{\"address\":\"99 Essex Street\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10002\"}",
+              "longitude" : "-73.98830122278652"
+            },
+            "count" : 4
+          }, {
+            "item" : {
+              "latitude" : "40.74552271604756",
+              "human_address" : "{\"address\":\"3 29th Street\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10001\"}",
+              "longitude" : "-73.987242979944"
+            },
+            "count" : 3
+          }, {
+            "item" : {
+              "latitude" : "40.71311535449007",
+              "human_address" : "{\"address\":\"89 56 162nd Street\",\"city\":\"Jamaica\",\"state\":\"NEW YORK\",\"zip\":\"11432\"}",
+              "longitude" : "-73.79282099978928"
+            },
+            "count" : 2
+          }, {
+            "item" : {
+              "latitude" : "40.85621992920642",
+              "human_address" : "{\"address\":\"223 30th Street\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10033\"}",
+              "longitude" : "-73.94585900019268"
+            },
+            "count" : 1
+          } ],
+          "smallest" : {
+            "latitude" : "40.70191201682616",
+            "human_address" : "{\"address\":\"060280 Brooklyn\",\"city\":\"NEW YORK\",\"state\":\"\",\"zip\":\"11206\"}",
+            "longitude" : "-73.94237919854112"
+          }
+        },
+        "format" : { },
+        "subColumnTypes" : [ "human_address", "latitude", "longitude", "machine_address", "needs_recoding" ]
+      }, {
+        "id" : 320392470,
+        "name" : "Postcode",
+        "dataTypeName" : "number",
+        "fieldName" : "postcode",
+        "position" : 9,
+        "renderTypeName" : "number",
+        "tableColumnId" : 53343613,
+        "width" : 100,
+        "cachedContents" : {
+          "largest" : "11432",
+          "non_null" : 58,
+          "average" : "10839.79310344828",
+          "null" : 20,
+          "top" : [ {
+            "item" : "11214",
+            "count" : 20
+          }, {
+            "item" : "10467",
+            "count" : 19
+          }, {
+            "item" : "10459",
+            "count" : 18
+          }, {
+            "item" : "10040",
+            "count" : 17
+          }, {
+            "item" : "10033",
+            "count" : 16
+          }, {
+            "item" : "11201",
+            "count" : 15
+          }, {
+            "item" : "11375",
+            "count" : 14
+          }, {
+            "item" : "11223",
+            "count" : 13
+          }, {
+            "item" : "10457",
+            "count" : 12
+          }, {
+            "item" : "10302",
+            "count" : 11
+          }, {
+            "item" : "11235",
+            "count" : 10
+          }, {
+            "item" : "11213",
+            "count" : 9
+          }, {
+            "item" : "11354",
+            "count" : 8
+          }, {
+            "item" : "11372",
+            "count" : 7
+          }, {
+            "item" : "11102",
+            "count" : 6
+          }, {
+            "item" : "10003",
+            "count" : 5
+          }, {
+            "item" : "10455",
+            "count" : 4
+          }, {
+            "item" : "10452",
+            "count" : 3
+          }, {
+            "item" : "11211",
+            "count" : 2
+          }, {
+            "item" : "11432",
+            "count" : 1
+          } ],
+          "smallest" : "10002",
+          "sum" : "628708"
+        },
+        "format" : {
+          "precisionStyle" : "standard",
+          "noCommas" : "true",
+          "align" : "right"
+        }
+      }, {
+        "id" : 320392372,
+        "name" : "Latitude",
+        "dataTypeName" : "number",
+        "fieldName" : "latitude",
+        "position" : 10,
+        "renderTypeName" : "number",
+        "tableColumnId" : 53284128,
+        "width" : 100,
+        "cachedContents" : {
+          "largest" : "40.877105",
+          "non_null" : 58,
+          "average" : "40.72393729310345",
+          "null" : 20,
+          "top" : [ {
+            "item" : "40.575607",
+            "count" : 20
+          }, {
+            "item" : "40.70727",
+            "count" : 19
+          }, {
+            "item" : "40.705055",
+            "count" : 18
+          }, {
+            "item" : "40.630818",
+            "count" : 17
+          }, {
+            "item" : "40.718943",
+            "count" : 16
+          }, {
+            "item" : "40.705395",
+            "count" : 15
+          }, {
+            "item" : "40.847012",
+            "count" : 14
+          }, {
+            "item" : "40.755586",
+            "count" : 13
+          }, {
+            "item" : "40.74622",
+            "count" : 12
+          }, {
+            "item" : "40.760412",
+            "count" : 11
+          }, {
+            "item" : "40.598158",
+            "count" : 10
+          }, {
+            "item" : "40.677725",
+            "count" : 9
+          }, {
+            "item" : "40.700955",
+            "count" : 8
+          }, {
+            "item" : "40.617702",
+            "count" : 7
+          }, {
+            "item" : "40.709112",
+            "count" : 6
+          }, {
+            "item" : "40.75909",
+            "count" : 5
+          }, {
+            "item" : "40.705199",
+            "count" : 4
+          } ],
+          "smallest" : "40.575607",
+          "sum" : "2361.988363"
+        },
+        "format" : { }
+      }, {
+        "id" : 320392373,
+        "name" : "Longitude",
+        "dataTypeName" : "number",
+        "fieldName" : "longitude",
+        "position" : 11,
+        "renderTypeName" : "number",
+        "tableColumnId" : 53284130,
+        "width" : 100,
+        "cachedContents" : {
+          "largest" : "-73.796524",
+          "non_null" : 58,
+          "average" : "-73.93381093103448",
+          "null" : 20,
+          "top" : [ {
+            "item" : "-73.959463",
+            "count" : 20
+          }, {
+            "item" : "-74.004314",
+            "count" : 19
+          }, {
+            "item" : "-73.955919",
+            "count" : 18
+          }, {
+            "item" : "-74.139187",
+            "count" : 17
+          }, {
+            "item" : "-73.988012",
+            "count" : 16
+          }, {
+            "item" : "-73.798368",
+            "count" : 15
+          }, {
+            "item" : "-73.93704",
+            "count" : 14
+          }, {
+            "item" : "-73.876834",
+            "count" : 13
+          }, {
+            "item" : "-73.915056",
+            "count" : 12
+          }, {
+            "item" : "-73.83191",
+            "count" : 11
+          }, {
+            "item" : "-73.951186",
+            "count" : 10
+          }, {
+            "item" : "-73.881715",
+            "count" : 9
+          }, {
+            "item" : "-73.913163",
+            "count" : 8
+          }, {
+            "item" : "-73.962525",
+            "count" : 7
+          }, {
+            "item" : "-74.006889",
+            "count" : 6
+          }, {
+            "item" : "-73.834194",
+            "count" : 5
+          }, {
+            "item" : "-73.799253",
+            "count" : 4
+          } ],
+          "smallest" : "-74.139187",
+          "sum" : "-4288.161034"
+        },
+        "format" : { }
+      }, {
+        "id" : 320392374,
+        "name" : "Community Board",
+        "dataTypeName" : "number",
+        "fieldName" : "community_board",
+        "position" : 12,
+        "renderTypeName" : "number",
+        "tableColumnId" : 53284133,
+        "width" : 100,
+        "cachedContents" : {
+          "largest" : "15",
+          "non_null" : 58,
+          "average" : "6.448275862068966",
+          "null" : 20,
+          "top" : [ {
+            "item" : "11",
+            "count" : 20
+          }, {
+            "item" : "2",
+            "count" : 19
+          }, {
+            "item" : "12",
+            "count" : 18
+          }, {
+            "item" : "6",
+            "count" : 17
+          }, {
+            "item" : "15",
+            "count" : 16
+          }, {
+            "item" : "5",
+            "count" : 15
+          }, {
+            "item" : "1",
+            "count" : 14
+          }, {
+            "item" : "13",
+            "count" : 13
+          }, {
+            "item" : "8",
+            "count" : 12
+          }, {
+            "item" : "7",
+            "count" : 11
+          }, {
+            "item" : "4",
+            "count" : 10
+          }, {
+            "item" : "3",
+            "count" : 9
+          }, {
+            "item" : "14",
+            "count" : 8
+          }, {
+            "item" : "9",
+            "count" : 7
+          } ],
+          "smallest" : "1",
+          "sum" : "374"
+        },
+        "format" : { }
+      }, {
+        "id" : 320392375,
+        "name" : "Council District ",
+        "dataTypeName" : "number",
+        "fieldName" : "community_council",
+        "position" : 13,
+        "renderTypeName" : "number",
+        "tableColumnId" : 53284135,
+        "width" : 100,
+        "cachedContents" : {
+          "largest" : "49",
+          "non_null" : 58,
+          "average" : "24.89655172413793",
+          "null" : 20,
+          "top" : [ {
+            "item" : "44",
+            "count" : 20
+          }, {
+            "item" : "13",
+            "count" : 19
+          }, {
+            "item" : "17",
+            "count" : 18
+          }, {
+            "item" : "10",
+            "count" : 17
+          }, {
+            "item" : "33",
+            "count" : 16
+          }, {
+            "item" : "29",
+            "count" : 15
+          }, {
+            "item" : "15",
+            "count" : 14
+          }, {
+            "item" : "49",
+            "count" : 13
+          }, {
+            "item" : "48",
+            "count" : 12
+          }, {
+            "item" : "35",
+            "count" : 11
+          }, {
+            "item" : "20",
+            "count" : 10
+          }, {
+            "item" : "21",
+            "count" : 9
+          }, {
+            "item" : "25",
+            "count" : 8
+          }, {
+            "item" : "22",
+            "count" : 7
+          }, {
+            "item" : "2",
+            "count" : 6
+          }, {
+            "item" : "14",
+            "count" : 5
+          }, {
+            "item" : "27",
+            "count" : 4
+          }, {
+            "item" : "1",
+            "count" : 3
+          }, {
+            "item" : "40",
+            "count" : 2
+          }, {
+            "item" : "3",
+            "count" : 1
+          } ],
+          "smallest" : "1",
+          "sum" : "1444"
+        },
+        "format" : {
+          "precisionStyle" : "standard",
+          "noCommas" : "false",
+          "align" : "right"
+        }
+      }, {
+        "id" : 320392376,
+        "name" : "Census Tract",
+        "dataTypeName" : "number",
+        "fieldName" : "census_tract",
+        "position" : 14,
+        "renderTypeName" : "number",
+        "tableColumnId" : 53284137,
+        "width" : 100,
+        "cachedContents" : {
+          "largest" : "79602",
+          "non_null" : 58,
+          "average" : "7452.724137931034",
+          "null" : 20,
+          "top" : [ {
+            "item" : "263",
+            "count" : 20
+          }, {
+            "item" : "36002",
+            "count" : 19
+          }, {
+            "item" : "213",
+            "count" : 18
+          }, {
+            "item" : "71",
+            "count" : 17
+          }, {
+            "item" : "1502",
+            "count" : 16
+          }, {
+            "item" : "44601",
+            "count" : 15
+          }, {
+            "item" : "275",
+            "count" : 14
+          }, {
+            "item" : "25301",
+            "count" : 13
+          }, {
+            "item" : "871",
+            "count" : 12
+          }, {
+            "item" : "578",
+            "count" : 11
+          }, {
+            "item" : "1168",
+            "count" : 10
+          }, {
+            "item" : "441",
+            "count" : 9
+          }, {
+            "item" : "768",
+            "count" : 8
+          } ],
+          "smallest" : "6",
+          "sum" : "432258"
+        },
+        "format" : { }
+      }, {
+        "id" : 320392377,
+        "name" : "BIN",
+        "dataTypeName" : "number",
+        "fieldName" : "bin",
+        "position" : 15,
+        "renderTypeName" : "number",
+        "tableColumnId" : 53284140,
+        "width" : 100,
+        "cachedContents" : {
+          "largest" : "5024824",
+          "non_null" : 58,
+          "average" : "2920079.086206897",
+          "null" : 20,
+          "top" : [ {
+            "item" : "3326880",
+            "count" : 20
+          }, {
+            "item" : "1001162",
+            "count" : 19
+          }, {
+            "item" : "3060375",
+            "count" : 18
+          }, {
+            "item" : "5024824",
+            "count" : 17
+          }, {
+            "item" : "1087565",
+            "count" : 16
+          }, {
+            "item" : "4208872",
+            "count" : 15
+          }, {
+            "item" : "1063574",
+            "count" : 14
+          }, {
+            "item" : "4431407",
+            "count" : 13
+          }, {
+            "item" : "4001161",
+            "count" : 12
+          }, {
+            "item" : "4457326",
+            "count" : 11
+          }, {
+            "item" : "3199766",
+            "count" : 10
+          }, {
+            "item" : "3327121",
+            "count" : 9
+          }, {
+            "item" : "3075982",
+            "count" : 8
+          }, {
+            "item" : "3180783",
+            "count" : 7
+          }, {
+            "item" : "1079063",
+            "count" : 6
+          }, {
+            "item" : "4112274",
+            "count" : 5
+          }, {
+            "item" : "4442231",
+            "count" : 4
+          } ],
+          "smallest" : "1001162",
+          "sum" : "169364587"
+        },
+        "format" : { }
+      }, {
+        "id" : 320392378,
+        "name" : "BBL",
+        "dataTypeName" : "number",
+        "fieldName" : "bbl",
+        "position" : 16,
+        "renderTypeName" : "number",
+        "tableColumnId" : 53284142,
+        "width" : 100,
+        "cachedContents" : {
+          "largest" : "5010490005",
+          "non_null" : 58,
+          "average" : "2808876838.293103",
+          "null" : 20,
+          "top" : [ {
+            "item" : "3086930001",
+            "count" : 20
+          }, {
+            "item" : "1000747501",
+            "count" : 19
+          }, {
+            "item" : "3022060034",
+            "count" : 18
+          }, {
+            "item" : "5010490005",
+            "count" : 17
+          }, {
+            "item" : "1004100064",
+            "count" : 16
+          }, {
+            "item" : "4097600074",
+            "count" : 15
+          }, {
+            "item" : "1021450051",
+            "count" : 14
+          }, {
+            "item" : "4014390001",
+            "count" : 13
+          }, {
+            "item" : "4001340027",
+            "count" : 12
+          }, {
+            "item" : "4049740049",
+            "count" : 11
+          }, {
+            "item" : "3073520032",
+            "count" : 10
+          }, {
+            "item" : "3039720012",
+            "count" : 9
+          }, {
+            "item" : "3033200001",
+            "count" : 8
+          }, {
+            "item" : "3067410006",
+            "count" : 7
+          }, {
+            "item" : "1000780004",
+            "count" : 6
+          }, {
+            "item" : "4049730006",
+            "count" : 5
+          }, {
+            "item" : "4097600001",
+            "count" : 4
+          } ],
+          "smallest" : "1000747501",
+          "sum" : "162914856621"
+        },
+        "format" : { }
+      }, {
+        "id" : 320392379,
+        "name" : "NTA",
+        "dataTypeName" : "text",
+        "fieldName" : "nta",
+        "position" : 17,
+        "renderTypeName" : "text",
+        "tableColumnId" : 53284145,
+        "width" : 100,
+        "cachedContents" : {
+          "largest" : "Williamsburg                                                               ",
+          "non_null" : 58,
+          "null" : 20,
+          "top" : [ {
+            "item" : "Bensonhurst West                                                           ",
+            "count" : 20
+          }, {
+            "item" : "Bronxdale                                                                  ",
+            "count" : 19
+          }, {
+            "item" : "Hunts Point                                                                ",
+            "count" : 18
+          }, {
+            "item" : "Washington Heights North                                                   ",
+            "count" : 17
+          }, {
+            "item" : "Washington Heights South                                                   ",
+            "count" : 16
+          }, {
+            "item" : "Brooklyn Heights-Cobble Hill                                               ",
+            "count" : 15
+          }, {
+            "item" : "Forest Hills                                                               ",
+            "count" : 14
+          }, {
+            "item" : "Homecrest                                                                  ",
+            "count" : 13
+          }, {
+            "item" : "Mount Hope                                                                 ",
+            "count" : 12
+          }, {
+            "item" : "Port Richmond                                                              ",
+            "count" : 11
+          }, {
+            "item" : "Brighton Beach                                                             ",
+            "count" : 10
+          }, {
+            "item" : "Crown Heights North                                                        ",
+            "count" : 9
+          }, {
+            "item" : "Flushing                                                                   ",
+            "count" : 8
+          }, {
+            "item" : "Elmhurst                                                                   ",
+            "count" : 7
+          }, {
+            "item" : "Jackson Heights                                                            ",
+            "count" : 6
+          }, {
+            "item" : "Old Astoria                                                                ",
+            "count" : 5
+          }, {
+            "item" : "West Village                                                               ",
+            "count" : 4
+          }, {
+            "item" : "Melrose South-Mott Haven North                                             ",
+            "count" : 3
+          }, {
+            "item" : "West Concourse                                                             ",
+            "count" : 2
+          }, {
+            "item" : "Elmhurst-Maspeth                                                           ",
+            "count" : 1
+          } ],
+          "smallest" : "Battery Park City-Lower Manhattan                                          "
+        },
+        "format" : { }
+      } ],
+      "grants" : [ {
+        "inherited" : false,
+        "type" : "viewer",
+        "flags" : [ "public" ]
+      } ],
+      "metadata" : {
+        "rdfSubject" : "0",
+        "rdfClass" : "",
+        "attachments" : [ {
+          "filename" : "Immigrant_Services_After_School_Programs.xlsx",
+          "assetId" : "a3baaea2-bf78-480e-8352-51b3d3fbe264",
+          "name" : "Immigrant_Services_After_School_Programs.xlsx"
+        } ],
+        "custom_fields" : {
+          "Update" : {
+            "Automation" : "No",
+            "Update Frequency" : "As needed"
+          },
+          "Dataset Information" : {
+            "Agency" : "Department of Youth and Community Development (DYCD)"
+          }
+        },
+        "rowIdentifier" : "0",
+        "rowLabel" : ""
+      },
+      "owner" : {
+        "id" : "5fuc-pqz2",
+        "displayName" : "NYC OpenData",
+        "profileImageUrlLarge" : "/api/users/5fuc-pqz2/profile_images/LARGE",
+        "profileImageUrlMedium" : "/api/users/5fuc-pqz2/profile_images/THUMB",
+        "profileImageUrlSmall" : "/api/users/5fuc-pqz2/profile_images/TINY",
+        "screenName" : "NYC OpenData",
+        "type" : "interactive",
+        "flags" : [ "siteMember" ]
+      },
+      "query" : { },
+      "rights" : [ "read" ],
+      "tableAuthor" : {
+        "id" : "5fuc-pqz2",
+        "displayName" : "NYC OpenData",
+        "profileImageUrlLarge" : "/api/users/5fuc-pqz2/profile_images/LARGE",
+        "profileImageUrlMedium" : "/api/users/5fuc-pqz2/profile_images/THUMB",
+        "profileImageUrlSmall" : "/api/users/5fuc-pqz2/profile_images/TINY",
+        "screenName" : "NYC OpenData",
+        "type" : "interactive",
+        "flags" : [ "siteMember" ]
+      },
+      "tags" : [ "jobs and economic mobility", "community", "development", "community development", "school", "child", "children", "after-school", "after-school programs", "programs", "immigration", "immigrant", "nda", "legal assistance", "legal services", "domestic violence", "neighborhood", "neighborhood development area", "immigrant support", "refugee", "refugee assistance", "lifelong learning" ],
+      "flags" : [ "default", "restorable", "restorePossibleForType" ]
+    }
+  },
+  "data" : [ [ 1, "207492EA-507B-4100-B841-C5290542D001", 1, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Services", "Sanctuary for Families, Inc. (Manhattan) ", "Manhattan,Bronx,Queens,Staten Island, Brooklyn", "Sanctuary for Families, Inc.", "212.349.6009           ext. 264", "All Ages", [ null, null, null, null, null ], null, null, null, null, null, null, null, null, null ]
+, [ 2, "2744197E-F60F-4853-AA1D-D4E365E456E9", 2, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Services", "Family Justice Centers in Queens and Brooklyn ", "Manhattan,Bronx,Queens,Staten Island, Brooklyn", "Sanctuary for Families, Inc.", "212.349.6009           ext. 264", "All Ages", [ null, null, null, null, null ], null, null, null, null, null, null, null, null, null ]
+, [ 3, "29F701FE-1958-41D6-825A-4D6A044CA12F", 3, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "Safe Horizon - Immigration Law Project", "Manhattan,Bronx,Queens,Staten Island, Brooklyn", "Safe Horizon, Inc.", null, "All Ages", [ null, null, null, null, null ], null, null, null, null, null, null, null, null, null ]
+, [ 4, "A8307D38-C77C-44DF-BA7E-94980A9791AA", 4, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Domestic Violence Program", "Jewish Board of Family and Children Services (JBFCS)-Genesis", "Manhattan", "New York Legal Assistance Group (NYLAG)", "212.613.5098", "Adult", [ "{\"address\":\"594 Manhattan\",\"city\":\"NEW YORK\",\"state\":\"\",\"zip\":\"10018\"}", "40.756840774582145", "-73.99669149981281", null, false ], null, null, null, null, null, null, null, null, null ]
+, [ 5, "0BE32958-F533-4B44-B9A4-2406EF4A1837", 5, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Domestic Violence Program", "Edith and Carl Marks Jewish Community House of Bensonhurst", "Brooklyn", "New York Legal Assistance Group (NYLAG)", "212.613.5000", "All Ages", [ "{\"address\":\"7802 Bay Parkway\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11214\"}", "40.606424326705934", "-73.98919274272059", null, false ], "11214", "40.606369", "-73.989235", "11", "44", "270", "3162352", "3062640030", "Bensonhurst West                                                           " ]
+, [ 6, "3141FA82-CC5F-4CAF-908B-4010CB1AB6FD", 6, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Domestic Violence Program", "Jewish Board of Family and Children Services -  Domestic Violence Coordination and Training", "Bronx", "New York Legal Assistance Group (NYLAG)", "212.613.5098", "Adult", [ "{\"address\":\"750 Astor Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10467\"}", "40.859547368357966", "-73.86555918636485", null, false ], "10467", "40.859588", "-73.865442", "11", "13", "330", "2050030", "2043450029", "Bronxdale                                                                  " ]
+, [ 7, "31535AE4-59E5-4905-B4AA-093BE9D7BC6E", 7, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Domestic Violence Program", "New York Legal Assistance Group (NYLAG)", "Manhattan", "New York Legal Assistance Group (NYLAG)", "212.613.5000", "All Ages", [ "{\"address\":\"450 33rd St\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10001\"}", "40.75347794565972", "-73.99864692871675", null, false ], null, null, null, null, null, null, null, null, null ]
+, [ 8, "516B2C23-B384-4147-B2A4-354FC1B409FE", 8, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Domestic Violence Program", "Jewish Board of Family and Children Services - Horizons", "Brooklyn", "New York Legal Assistance Group (NYLAG)", "212.613.5098", "Adult", [ "{\"address\":\"060280 Brooklyn\",\"city\":\"NEW YORK\",\"state\":\"\",\"zip\":\"11206\"}", "40.70191201682616", "-73.94237919854112", null, false ], null, null, null, null, null, null, null, null, null ]
+, [ 9, "DA8A66F3-69B7-4DC3-B30F-B0F0AC86890F", 9, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Domestic Violence Program", "Bronx Neighborhood Office, Legal Aid Society", "Bronx", "The Legal Aid Society", "718.991.4758", "Adult", [ "{\"address\":\"953 Southern Blvd\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10459\"}", "40.82138697876596", "-73.89168233735057", null, false ], "10459", "40.82148", "-73.891688", "2", "17", "159", "2005787", "2027240186", "Hunts Point                                                                " ]
+, [ 10, "017EC117-F6B3-431C-84B6-018946C5098C", 10, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Services - Immigrant Families", "Harbor Heights Middle School - Children's Arts & Science", "Manhattan", "Children's Arts & Science Workshops, Inc.", "212-923-7766", "All Ages", [ "{\"address\":\"549 Audubon Avenue\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10040\"}", "40.856389753646916", "-73.92672451121956", null, false ], "10040", "40.855954", "-73.927051", "12", "10", "277", "1076751", "1021600018", "Washington Heights North                                                   " ]
+, [ 11, "353CBA77-9BD4-4A36-B9DF-A0017F587A28", 11, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "Northern Manhattan Improvement Corporation (NMIC)", "Manhattan", "Northern Manhattan              Improvement Corporation", "212-822-8319", "All Ages", [ "{\"address\":\"76 Wadsworth Avenue\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10033\"}", "40.84705167605878", "-73.93704472494271", null, false ], "10033", "40.847012", "-73.93704", "12", "10", "263", "1063574", "1021450051", "Washington Heights South                                                   " ]
+, [ 12, "21D06144-9648-434E-AEAA-1A91255608A7", 12, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Domestic Violence Program", "Brooklyn Neighborhood Office, Legal Aid Society ", "Brooklyn", "The Legal Aid Society", "718.422.2765", "Adult", [ "{\"address\":\"111 Livingston St\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11201\"}", "40.69109687573092", "-73.98955322065659", null, false ], "11201", "40.691144", "-73.98981", "2", "33", "9", "3002555", "3002660001", "Brooklyn Heights-Cobble Hill                                               " ]
+, [ 13, "F56A2524-30C1-48C7-BBA6-F0E6B8FBF466", 13, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "St.Cecilia's Community Center ", "Manhattan", "Catholic Charities Community Service, Archdiocese of N Y", "212-348-0488", "All Ages", [ "{\"address\":\"125 105th Street\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10029\"}", "40.79190439287778", "-73.9475075400997", null, false ], null, null, null, null, null, null, null, null, null ]
+, [ 14, "C375F7A7-9568-4B03-AA94-4200D647CF00", 14, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "Queens Community House", "Queens", "The Legal Aid Society", "212-577-3292 ", "All Ages", [ "{\"address\":\"108 25 62nd Drive\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11375\"}", "40.720707263029794", "-73.84628429608335", null, false ], "11375", "40.73591", "-73.850212", "6", "29", "745", "4432108", "4021590002", "Forest Hills                                                               " ]
+, [ 15, "DB2E5052-1EB4-47D8-A74F-E102E823A330", 15, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services,NDA Programs", "NDA Immigrants", "F.E.G.S. Brooklyn Resource Center [Program site]", "Brooklyn", "Federation of Employment and Guidance Services, Inc.", "718-336-2836x330 ", "Adult", [ "{\"address\":\"938 Kings Highway\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11233\"}", "40.60700851986621", "-73.96282101223699", null, false ], "11223", "40.607066", "-73.962714", "15", "44", "418", "3177634", "3066660112", "Homecrest                                                                  " ]
+, [ 16, "8A6E0727-33C3-4F5F-9AD8-034A1C27C684", 16, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "Citizens Advice Bureau - Immigration Assistance Center", "Bronx", "Citizens Advice Bureau", "718- 293-0727", "All Ages", [ "{\"address\":\"2070 Grand\",\"city\":\"Concourse Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10457\"}", "40.85309059209145", "-73.90280877587541", null, false ], "10457", "40.853222", "-73.902947", "5", "15", "23502", "2013631", "2031560009", "Mount Hope                                                                 " ]
+, [ 62, "1AA3D2FC-06C3-4F82-9138-034680B4ED31", 62, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Domestic Violence Program", "CONNECT", "Manhattan", "Safe Space", "212.206.3440 ext. 237", "All Ages", [ "{\"address\":\"3 29th Street\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10001\"}", "40.74552271604756", "-73.987242979944", null, false ], null, null, null, null, null, null, null, null, null ]
+, [ 17, "2E9A20A0-B52E-4779-9C63-E6D1ED4AB63A", 17, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "El Centro de Hospitalidad ", "Staten Island", "Catholic Charities Community Service, Archdiocese of N Y", "718-420-6466 646-772-0096", "All Ages", [ "{\"address\":\"1546 Castleton Avenue Staten Island\",\"city\":\"NEW YORK\",\"state\":\"\",\"zip\":\"10302\"}", "40.63589249589933", "-74.13449607767508", null, false ], "10302", "40.63586", "-74.134431", "1", "49", "207", "5024246", "5010350014", "Port Richmond                                                              " ]
+, [ 18, "0611743D-A0DF-438D-B307-FFE5C74AD00A", 18, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Domestic Violence Program", "Shorefront Y                                                                                                                                                                                                                                                   ", "Brooklyn", "New York Legal Assistance Group (NYLAG)", "212.613.5000", "Adult", [ "{\"address\":\"3300 Coney Island Av\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11235\"}", "40.575793969703795", "-73.95950745079742", null, false ], "11235", "40.575607", "-73.959463", "13", "48", "36002", "3326880", "3086930001", "Brighton Beach                                                             " ]
+, [ 19, "9E19A082-9AC6-4BDD-840C-1088E93EA257", 19, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "Crown Heights Community Mediation", "Brooklyn", "The Legal Aid Society", "212-577-3292 ", "All Ages", [ "{\"address\":\"256 Kingston Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11213\"}", "40.67079925857397", "-73.94209318254946", null, false ], "11213", "40.6708", "-73.942077", "8", "35", "339", "3032463", "3012570074", "Crown Heights North                                                        " ]
+, [ 20, "F0B1A9C5-9F51-44C3-BBB1-F910F41940E0", 20, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Services - Immigrant Families", "Goodwill Industries Greater NY-NJ (Admin & Activity site)", "Brooklyn", "Goodwill Industries of Greater New York", "718.339.0937", "11+", [ "{\"address\":\"1416 Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11230\"}", "40.62192951023877", "-73.96551106018723", null, false ], null, null, null, null, null, null, null, null, null ]
+, [ 21, "BF65C36D-6782-4709-B314-7AD672F6C994", 21, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Services - Immigrant Families", "Children's Arts & Sciences Workshops (Admin & Activity site)", "Manhattan", "Children's Arts & Sciences Workshops", "212-923-7766", "11+", [ "{\"address\":\"686 204th Street\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10034\"}", "40.867820783175965", "-73.92367507747998", null, false ], null, null, null, null, null, null, null, null, null ]
+, [ 22, "3FB931C4-344C-485F-A02B-2E5F673000C7", 22, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "Flushing Immigration Center - CUNY", "Queens", "Research Foundation of CUNY", "718-640-9223", "All Ages", [ "{\"address\":\"39 07 Prince St\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11354\"}", "40.76862022064671", "-73.82719028070687", null, false ], "11354", "40.759543", "-73.832255", "7", "20", "871", "4112321", "4049767501", "Flushing                                                                   " ]
+, [ 23, "5EDDF365-C9B2-46C6-8920-2E763885FD84", 23, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services,NDA Programs", "NDA Immigrants", "Make the Road New York", "Jackson Heights", "Make the Road New York", "718-418-7690 X 205 ", "Adult", [ "{\"address\":\"92 10 Roosevelt Avenue Jackson Heights\",\"city\":\"NEW YORK\",\"state\":\"\",\"zip\":\"13372\"}", "40.751979000030815", "-73.88282399992767", null, false ], "11372", "40.748623", "-73.874487", "4", "21", "469", "4038783", "4015500020", "Elmhurst                                                                   " ]
+, [ 24, "AB364C0D-BCC2-4A2C-A8AA-5D85498F487A", 24, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Services - Immigrant Families", "New Immigrant Community Empowerment (NICE) (Admin & Activity site)", "Queens", "New Immigrant Community Empowerment (NICE)", "718.205.8796", "18+", [ "{\"address\":\"37 41 77th Street\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"10302\"}", "40.63083331110846", "-74.13773429869889", null, false ], "11372", "40.748031", "-73.888838", "3", "25", "287", "4029910", "4012880060", "Jackson Heights                                                            " ]
+, [ 25, "2231BECB-F82B-4970-B9F2-FC1B1ACBBA2B", 25, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Services - Immigrant Families", "Make the Road New York (Admin & Activity site)", "Staten Island", "Make the Road New York", "718.565.8500 718.727.1222", "18+", [ "{\"address\":\"479 Port Richmond Av Staten Island\",\"city\":\"NEW YORK\",\"state\":\"\",\"zip\":\"10302\"}", "40.63093452909704", "-74.13901464968129", null, false ], "10302", "40.630818", "-74.139187", "1", "49", "213", "5024824", "5010490005", "Port Richmond                                                              " ]
+, [ 26, "573B74A5-69FA-4C4B-9428-617E8A64714C", 26, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Services - Immigrant Youth", "Urban Justice Center at the Ali Forney Center", "Manhattan", "Urban Justice Center", "646-602-5633", "20-May", [ "{\"address\":\"527 22nd Street\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10011\"}", "40.74739972392154", "-74.00552562193494", null, false ], null, null, null, null, null, null, null, null, null ]
+, [ 27, "E9486BA8-D7FE-414A-BC3B-ABF558B3CCCB", 27, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Domestic Violence Program", "Shorefront YM-YWHA                                                                                                                                                                                                                                                   ", "Brooklyn", "New York Legal Assistance Group (NYLAG)", "718-646-1444", "All Ages", [ "{\"address\":\"3300 Coney Island Av\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11235\"}", "40.575793969703795", "-73.95950745079742", null, false ], "11235", "40.575607", "-73.959463", "13", "48", "36002", "3326880", "3086930001", "Brighton Beach                                                             " ]
+, [ 28, "A3F01E3E-3563-4AC7-8A25-D6F75CC41188", 28, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "Center for Battered Women", "Manhattan", "Sanctuary for Families", "212-349-6009", "All Ages", [ "{\"address\":\"1406 Wall Street Station\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10268\"}", "40.70545300025583", "-74.00695600011926", null, false ], null, null, null, null, null, null, null, null, null ]
+, [ 29, "0D67C9BF-7F66-400B-B9CB-405253FB4C4D", 29, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Services - Immigrant Families", "Center for Integration and Advancement of New Americans (CIANA)", "Queens", "New Immigrant Community Empowerment (NICE)", "718.545.4040", "All Ages", [ "{\"address\":\"31 09 Newtown Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11102\"}", "40.77152402451418", "-73.92643545073543", null, false ], "11102", "40.767493", "-73.920661", "1", "22", "71", "4536739", "4006190020", "Old Astoria                                                                " ]
+, [ 30, "783FFEC8-A798-443F-A3D7-65E031E5D055", 30, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Services - Immigrant Youth", "Urban Justice Center at the Hetrick Martin Institute ", "Manhattan", "Urban Justice Center", "646.602.5633", "20-May", [ "{\"address\":\"2 Astor Place\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10003\"}", "40.73004972130843", "-73.99278994498403", null, false ], "10003", "40.730038", "-73.992632", "2", "2", "57", "1080092", "1005450026", "West Village                                                               " ]
+, [ 31, "71F980FE-7285-475B-A609-4ADC2D8BBAF7", 31, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Services - Immigrant Families", "Big Brothers/Big Sisters, Inc. (Activity Site)", "Bronx", "Big Brothers/Big Sisters, Inc.", "212.994.7742", "14-Nov", [ "{\"address\":\"555 Bergen Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10455\"}", "40.81594441525443", "-73.91641591148277", null, false ], "10455", "40.815959", "-73.916354", "1", "17", "71", "2097027", "2022940002", "Melrose South-Mott Haven North                                             " ]
+, [ 32, "81FFFCC5-9CD7-4AAB-B8AD-D3F4F4F63F86", 32, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services,NDA Programs", "NDA Immigrants", "Citizens Advice Bureau - Immigration Assistance Center", "Bronx", "Citizens Advice Bureau", "718-365-0910", "All Ages", [ "{\"address\":\"1477 Townsend Ave\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10452\"}", "40.841513488175195", "-73.9156620372896", null, false ], "10452", "40.841504", "-73.915639", "4", "14", "223", "2098821", "2028440021", "West Concourse                                                             " ]
+, [ 33, "BB6BF02E-2D21-4EA5-989A-7564E66C26CB", 33, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Immigrant/Refugee Assistance", "Make the Road New York-Jackson Heights Center", "Queens", "Make the Road New York", "718.565.8500", "ESOL/Civics", [ "{\"address\":\"71 24 Roosevelt Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11372\"}", "40.75163073936716", "-73.88361254528269", null, false ], "11372", "40.746551", "-73.894199", "4", "25", "265", "4459321", "4013030009", "Elmhurst-Maspeth                                                           " ]
+, [ 34, "D400F531-DC4C-4E14-9229-622D86491473", 34, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Domestic Violence Program", "Mercy Center", "Bronx", "New York Legal Assistance Group (NYLAG)", "212-613-5000", "All Ages", [ "{\"address\":\"377 145th St\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10454\"}", "40.81385583017525", "-73.92035529273", null, false ], null, null, null, null, null, null, null, null, null ]
+, [ 35, "96BE789A-50D0-4F63-8E29-AA4B28526E6C", 35, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "Washington Heights Ecumenical Food Pantry (WHEFP)", "Manhattan", "Catholic Charities Community Service, Archdiocese of N Y", "212-419-3700", "All Ages", [ "{\"address\":\"4111 Broadway\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10033\"}", "40.845160338750205", "-73.93878884162382", null, false ], "10033", "40.845128", "-73.938763", "12", "10", "263", "1063501", "1021420133", "Washington Heights South                                                   " ]
+, [ 36, "301C6B10-3AC2-4708-BA39-AA7A9337FA9B", 36, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Domestic Violence Program", "Queens Jewish Community Council", "Forest Hills", "New York Legal Assistance Group (NYLAG)", "212-613-5000", "All Ages", [ "{\"address\":\"119 45 Union Turnpike Forest Hills\",\"city\":\"NEW YORK\",\"state\":\"\",\"zip\":\"11375\"}", "40.720707263029794", "-73.84628429608335", null, false ], "11375", "40.713909", "-73.832351", "6", "29", "76902", "4312087", "4033477501", "Forest Hills                                                               " ]
+, [ 37, "2FEF3196-0470-4472-8DBC-EC83E6A86C14", 37, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Immigrant/Refugee Assistance", "Southside Community Mission", "Brooklyn", "Southside Community Mission, Inc.", "718.782.8181 or 718.387.6052 ", "ESOL/Civics", [ "{\"address\":\"250 Hooper Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11211\"}", "40.70581785170525", "-73.9556640768342", null, false ], "11211", "40.705898", "-73.955611", "1", "33", "529", "3379706", "3022070002", "Williamsburg                                                               " ]
+, [ 38, "CA8A694E-7159-435B-8574-86732005F7F5", 38, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "Family Justice Center", "Brooklyn", "Sanctuary for Families", "212-349-6009", "All Ages", [ "{\"address\":\"350 Jay Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11201\"}", "40.69351957615995", "-73.98726442001791", null, false ], "11201", "40.693524", "-73.987249", "2", "33", "11", "3000259", "3001407501", "DUMBO-Vinegar Hill-Downtown Brooklyn-Boerum Hill                           " ]
+, [ 39, "16CB6B1C-9CD2-4A67-8D11-5EFBB6D55C70", 39, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "LaGuardia Community College Immigration Center - CUNY", "Queens", "Research Foundation of CUNY", "718-482-5139", "All Ages", [ "{\"address\":\"166 Queens\",\"city\":\"NEW YORK\",\"state\":\"\",\"zip\":\"11101\"}", "40.74570244980828", "-73.93866902925225", null, false ], null, null, null, null, null, null, null, null, null ]
+, [ 40, "06A4BDAA-6F38-4630-9B5E-5078875DD7F2", 40, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Domestic Violence Program", "The Child Center of NY ? WIA Office", "Jamaica", "Safe Space", "212.206.3440 ext. 237", "All Ages", [ "{\"address\":\"163 18 Jamaica Av\",\"city\":\"Jamaica\",\"state\":\"NEW YORK\",\"zip\":\"11432\"}", "40.71311535449007", "-73.79282099978928", null, false ], "11432", "40.704799", "-73.796524", "12", "27", "44601", "4216197", "4101510007", "Jamaica                                                                    " ]
+, [ 41, "71A6E4D4-A454-43C2-A6DB-093E993FA3ED", 41, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Services - Immigrant Youth", "Legal Aid - Juvenile Rights Division", "Manhattan", "The Legal Aid Society", "212.577.3328", "20-May", [ "{\"address\":\"199 Water Street\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10038\"}", "40.70708573646016", "-74.00463169395886", null, false ], "10038", "40.70727", "-74.004314", "1", "1", "1502", "1001162", "1000747501", "Battery Park City-Lower Manhattan                                          " ]
+, [ 42, "F491F547-79C8-4ECB-9AF0-923E8AF4D666", 42, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Immigrant/Refugee Assistance", "Jackson Heights Program", "Queens", "Queens Community House, Inc.", "718.592.5757 or 718.898.7461", "Adult", [ "{\"address\":\"74 09 37th Avenue (Jackson Heights\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11372\"}", "40.75163073936716", "-73.88361254528269", null, false ], "11372", "40.748992", "-73.891561", "3", "25", "289", "4029563", "4012740035", "Jackson Heights                                                            " ]
+, [ 43, "903AA380-710B-4B27-8539-1C43FC5D86D9", 43, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Services - Immigrant Families", "Cabrini Immigrant Services (Admin & Activity site)", "Manhattan", "Cabrini Center for Nursing & Rehabilitation", "212.791.4590", "18+", [ "{\"address\":\"139 Henry Street\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10002\"}", "40.713327031343454", "-73.99078213470762", null, false ], "10002", "40.713339", "-73.990755", "3", "1", "6", "1003565", "1002830016", "Lower East Side                                                            " ]
+, [ 44, "556EE83F-0E18-4B90-B73D-E36F3F0300A7", 44, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Immigrant/Refugee Assistance", "COJO Flatbush", "Brooklyn", "Council of Jewish Organizations of Flatbush (COJO)", "718.377.2900", "Adult", [ "{\"address\":\"1550 Coney Island Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11230\"}", "40.61969757437525", "-73.96431415429318", null, false ], "11230", "40.619517", "-73.964188", "12", "44", "454", "3171988", "3065460011", "Ocean Parkway South                                                        " ]
+, [ 45, "B27E841F-E870-4235-B9C9-EB80FF6991BC", 45, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "CAMBA", "Brooklyn", "CAMBA, Inc.", "718-940-6311 ", "All Ages", [ "{\"address\":\"2211 Church Av\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11226\"}", "40.65044686678422", "-73.95854532388019", null, false ], "11226", "40.650424", "-73.958175", "14", "40", "79602", "3116881", "3050890071", "Prospect Lefferts Gardens-Wingate                                          " ]
+, [ 46, "5018870B-37B1-4485-ACF2-FDA0C2343EF0", 46, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Services - Immigrant Youth", "The Door", "Manhattan", "The Door - A Center of Alternatives", "212-941-9090 ext. 3280", "20-May", [ "{\"address\":\"121 6th Avenue\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10013\"}", "40.72398399739069", "-74.00464968039944", null, false ], "10013", "40.723903", "-74.00469", "2", "3", "37", "1083493", "1004777501", "SoHo-TriBeCa-Civic Center-Little Italy                                     " ]
+, [ 47, "2FA235A8-4C01-4234-B181-01504B3BB2A1", 47, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "The Lower Manhattan Neighborhood Office", "Manhattan", "The Legal Aid Society", "212-577-3292 ", "All Ages", [ "{\"address\":\"199 Water Street\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10038\"}", "40.70708573646016", "-74.00463169395886", null, false ], "10038", "40.70727", "-74.004314", "1", "1", "1502", "1001162", "1000747501", "Battery Park City-Lower Manhattan                                          " ]
+, [ 48, "644EDA39-A2ED-4C62-8057-33DB55B8E10C", 48, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "Chinese Consolidated Benevolent Asociation of New York", "Manhattan", "Northern Manhattan   Improvement Corporation", "212-822-8319", "All Ages", [ "{\"address\":\"62 Mott St\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10013\"}", "40.71607633471377", "-73.9981586658295", null, false ], "10013", "40.716051", "-73.998222", "3", "1", "29", "1002403", "1002010004", "Chinatown                                                                  " ]
+, [ 49, "9A2E346B-C0CA-4539-B252-5B830C64C6CB", 49, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "Queens Family Justice Center", "Kew Gardens", "Sanctuary for Families", "212-349-6009 ", "All Ages", [ "{\"address\":\"126 02 82nd Ave Kew Gardens\",\"city\":\"NEW YORK\",\"state\":\"\",\"zip\":\"11415\"}", "40.708286075142325", "-73.82855612156771", null, false ], "11415", "40.713732", "-73.826122", "9", "29", "216", "4458616", "4096530001", "Kew Gardens                                                                " ]
+, [ 50, "C502F4EB-B6EA-4773-819E-84231DF41552", 50, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Domestic Violence Program", "Jewish Board of Family and Children Services  - Transition Center", "Queens", "New York Legal Assistance Group (NYLAG)", "212.613.5098", "Adult", [ "{\"address\":\"629 Far\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11691\"}", "40.600614338480966", "-73.76256777468302", null, false ], null, null, null, null, null, null, null, null, null ]
+, [ 51, "CF1320C8-BE7A-4FB2-BD07-3885F9BC0749", 51, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services,NDA Programs", "NDA Immigrats", "Goodwill Industries of Greater New York & Northern NJ, Refugee and Immigrant Services (Program Site 1)", "Brooklyn", "Goodwill Industries of Greater New York", "718- 339-0939 ", "Adult", [ "{\"address\":\"1416 Avenue\",\"city\":\"M Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11230\"}", "40.61789996472653", "-73.96077504128672", null, false ], "11230", "40.617962", "-73.960396", "14", "48", "768", "3180877", "3067430006", "Midwood                                                                    " ]
+, [ 52, "4ACA51F0-0841-432B-BF14-78AFFCF7A773", 52, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Domestic Violence Program", "Kensington Self-Help ", "Brooklyn", "New York Legal Assistance Group (NYLAG)", "212-613-5000", "All Ages", [ "{\"address\":\"419 Church Ave\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11218\"}", "40.64409707953028", "-73.97640972645803", null, false ], "11218", "40.644278", "-73.975947", "12", "39", "496", "3124649", "3053370027", "Kensington-Ocean Parkway                                                   " ]
+, [ 53, "840A802F-A04F-4011-BB47-8E048763C244", 53, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services,NDA Programs", "NDA Immigrants", "Tolentine -Zeiser Community Life Center/ St, Rita", "Bronx", "Catholic Charities Community Service, Archdiocese of N Y", "718-365-4360 ", "Adult", [ "{\"address\":\"2342 Andrews Av (near Fordham Rd\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10468\"}", "40.869693003729196", "-73.89892699248668", null, false ], "10468", "40.862324", "-73.906553", "7", "14", "255", "2094685", "2032180035", "Kingsbridge Heights                                                        " ]
+, [ 54, "AE149A3E-3BDB-4848-8755-3BC90F2D4A8D", 54, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services,NDA Programs", "NDA Immigrants", "United Communities Centers ", "Brooklyn", "United Communities Centers", "718-649-7979", "All Ages", [ "{\"address\":\"613 New Lots Ave\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11207\"}", "40.66472649825768", "-73.88659110359023", null, false ], "11207", "40.664728", "-73.886561", "5", "42", "1124", "3090717", "3040890025", "East New York                                                              " ]
+, [ 55, "FBEF388C-488F-461B-9BAD-A2B3F594541D", 55, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Services - Immigrant Families", "JFK High School - Children's Arts & Science", "Bronx", "Children's Arts & Science Workshops, Inc.", "212-923-7766", "All Ages", [ "{\"address\":\"99 Terrace View Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10463\"}", "40.877210772673564", "-73.91213621128965", null, false ], "10463", "40.877105", "-73.912256", "8", "10", "309", "1064532", "1022150080", "Marble Hill-Inwood                                                         " ]
+, [ 56, "66BDFF6D-152D-4FD2-9B01-EE40ADC42FCB", 56, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Services - Immigrant Families", "Alianza Dominicana, Inc. (Admin & Activity site)", "Bronx", "Alianza Dominicana, Inc.", "212.740.1960", "18+", [ "{\"address\":\"1257 Ogden Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10452\"}", "40.83927054580515", "-73.92578827979769", null, false ], "10452", "40.839378", "-73.925714", "4", "16", "201", "2003519", "2025290081", "Highbridge                                                                 " ]
+, [ 57, "97C5F741-6957-47DC-B6D0-1E0F5C4B4B86", 57, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "Catholic Charities Community Service, Archdiocese of N Y", "Manhattan", "Catholic Charities Community Service, Archdiocese of N Y", "212-419-3700", "All Ages", [ "{\"address\":\"1011 First Avenue\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10022\"}", "40.7572783324888", "-73.96371387829234", null, false ], "10022", "40.757271", "-73.963692", "6", "5", "108", "1039972", "1013480023", "Turtle Bay-East Midtown                                                    " ]
+, [ 58, "971217B7-766E-4713-82C0-B7471161CE70", 58, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Immigrant/Refugee Assistance", "Southside Community Mission", "Brooklyn", "Southside Community Mission, Inc.", "718.782.8181 or 718.387.6052 ", "Adult", [ "{\"address\":\"280 Marcy Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11211\"}", "40.70499449388848", "-73.95589166067984", null, false ], "11211", "40.705055", "-73.955919", "1", "33", "533", "3060375", "3022060034", "Williamsburg                                                               " ]
+, [ 59, "D2E78151-0E20-4648-94DE-C8E7F738C200", 59, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services,NDA Programs", "NDA Immigrants", "Make the Road New York", "Staten Island", "Make the Road New York", "718-727-1222 718 418-7690 X 205 ", "Adult", [ "{\"address\":\"479 Port Richmond Avenue Staten Island\",\"city\":\"NEW YORK\",\"state\":\"\",\"zip\":\"10302\"}", "40.63093452909704", "-74.13901464968129", null, false ], "10302", "40.630818", "-74.139187", "1", "49", "213", "5024824", "5010490005", "Port Richmond                                                              " ]
+, [ 60, "FDCA8394-6138-4C0F-A5C0-6F40828FC5F9", 60, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Domestic Violence Program", "Sanctuary for Families", "Manhattan", "Sanctuary for Families", "212.349.6009          ", "All Ages", [ "{\"address\":\"1406 Wall Street Station\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10268\"}", "40.70545300025583", "-74.00695600011926", null, false ], null, null, null, null, null, null, null, null, null ]
+, [ 61, "D856F868-71E3-4BA3-856C-39536CC1B7DF", 61, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Immigrant/Refugee Assistance", "Henry Street Settlement - Workforce Development Center ", "Manhattan", "Henry Street Settlement, Inc. ", "212.766.9200", "ESOL/Civics", [ "{\"address\":\"99 Essex Street\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10002\"}", "40.71844741559961", "-73.98830122278652", null, false ], "10002", "40.718943", "-73.988012", "3", "1", "18", "1087565", "1004100064", "Chinatown                                                                  " ]
+, [ 63, "04F3992C-2A7A-42F5-A17E-3926DB8D352B", 63, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Services - Immigrant Families", "Big Brothers/Big Sisters, Inc. (Activity Site)", "Jamaica", "Big Brothers/Big Sisters, Inc.", "212.994.7742", "14-Nov", [ "{\"address\":\"89 56 162nd Street\",\"city\":\"Jamaica\",\"state\":\"NEW YORK\",\"zip\":\"11432\"}", "40.71311535449007", "-73.79282099978928", null, false ], "11432", "40.705395", "-73.798368", "12", "24", "44601", "4208872", "4097600074", "Jamaica                                                                    " ]
+, [ 64, "C5DDAB90-04E7-4729-9690-5D745B6A977A", 64, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Services - Immigrant Families", "Big Brothers/Big Sisters, Inc. (Admin Site)", "Manhattan", "Big Brothers/Big Sisters, Inc.", "212.994.7742", "14-Nov", [ "{\"address\":\"223 30th Street\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10033\"}", "40.85621992920642", "-73.94585900019268", null, false ], null, null, null, null, null, null, null, null, null ]
+, [ 65, "7FD13C6A-45F0-4A8F-95F0-F63FFFC4FF09", 65, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services,NDA Programs", "NDA Immigrants", "Northern Manhattan Improvement Corporation (NMIC)", "Manhattan", "Northern Manhattan              Improvement Corporation", "212-822-8300", "All Ages", [ "{\"address\":\"76 Wadsworth Avenue\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10033\"}", "40.84705167605878", "-73.93704472494271", null, false ], "10033", "40.847012", "-73.93704", "12", "10", "263", "1063574", "1021450051", "Washington Heights South                                                   " ]
+, [ 66, "11116D7A-B278-40AC-8E98-60CE6C2412E1", 66, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Immigrant/Refugee Assistance", "Jackson Heights-Elmhust Kehilah", "Queens", "Jackson Heights-Elmhust Kehilah, Inc.", "718.457.4591", "ESOL/Civics", [ "{\"address\":\"33 47 91st Street (Jackson Heights\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11372\"}", "40.75163073936716", "-73.88361254528269", null, false ], "11372", "40.755586", "-73.876834", "3", "25", "275", "4431407", "4014390001", "Jackson Heights                                                            " ]
+, [ 67, "D12AB6B5-B526-4EB8-B5D4-70A121F74D4C", 67, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Immigrant/Refugee Assistance", "Make the Road New York ", "Queens", "Make the Road New York", "718.565.8500", "ESOL/Civics", [ "{\"address\":\"49 06 Skillman Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11377\"}", "40.74519376448069", "-73.9048471440804", null, false ], "11377", "40.74622", "-73.915056", "2", "26", "25301", "4001161", "4001340027", "Hunters Point-Sunnyside-West Maspeth                                       " ]
+, [ 68, "3DD9ECB6-FCB2-4D2E-B419-8F4DDC6F6DE7", 68, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Immigrant/Refugee Assistance", "St. George's Episcopal Church", "Queens", "Flushing Jewish Community Council", "718.463.0434", "ESOL/Civics", [ "{\"address\":\"135 33 38th Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11354\"}", "40.76862022064671", "-73.82719028070687", null, false ], "11354", "40.760412", "-73.83191", "7", "20", "871", "4457326", "4049740049", "Flushing                                                                   " ]
+, [ 69, "F378E054-7A67-4319-B22B-F404ADA45F2B", 69, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Immigrant/Refugee Assistance", "Homecrest Community Services, Inc.", "Brooklyn", "Shorefront Jewish Community Council", "718.743.0575", "Adult", [ "{\"address\":\"1413 Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11229\"}", "40.60123350732056", "-73.94436854117521", null, false ], null, null, null, null, null, null, null, null, null ]
+, [ 70, "DDB5EF14-B833-44FC-8212-0F9A00CC8886", 70, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Immigrant/Refugee Assistance", "Jay Senior Center", "Brooklyn", "Shorefront Jewish Community Council", "718.743.0575", "Adult", [ "{\"address\":\"2600 Ocean Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11229\"}", "40.598089925353555", "-73.95126983806618", null, false ], "11229", "40.598158", "-73.951186", "15", "48", "578", "3199766", "3073520032", "Madison                                                                    " ]
+, [ 71, "54B494B5-3082-4F56-A973-B3CC218984E6", 71, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Services - Immigrant Youth", "Urban Justice Center at the Streetwork Project", "Manhattan", "Urban Justice Center", "646-602-5633", "20-May", [ "{\"address\":\"209 125 Street\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10027\"}", "40.809154206198805", "-73.94868347483566", null, false ], null, null, null, null, null, null, null, null, null ]
+, [ 72, "E991DC64-F004-444B-91F6-199998A604DE", 72, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Services - Immigrant Families", "Big Brothers/Big Sisters, Inc. (Activity Site)", "Brooklyn", "Big Brothers/Big Sisters, Inc.", "212.994.7742", "14-Nov", [ "{\"address\":\"280 Shepherd Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11208\"}", "40.67773088441804", "-73.88173831485612", null, false ], "11208", "40.677725", "-73.881715", "5", "37", "1168", "3327121", "3039720012", "East New York                                                              " ]
+, [ 73, "7071AC0A-3A21-4191-96FC-6BC887214418", 73, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services,NDA Programs", "NDA Immigrants", "Make the Road New York", "Brooklyn", "Make the Road New York", "718-418-7690 X 205", "Adult", [ "{\"address\":\"391 Grove Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11237\"}", "40.7008190928138", "-73.91333075450414", null, false ], "11237", "40.700955", "-73.913163", "4", "37", "441", "3075982", "3033200001", "Bushwick North                                                             " ]
+, [ 74, "C2A69D44-9761-469D-8815-BB2AE5707C17", 74, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services,NDA Programs", "NDA Immigrants", "Goodwill Industries of NY & Northern NJ, Refugee and Immigrant Services (Program Site 2)", "Brooklyn", "Goodwill Industries of Greater New York", "718-339-0939 ", "Adult", [ "{\"address\":\"1222 Avenue\",\"city\":\"M Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11230\"}", "40.61772526251982", "-73.96227992950067", null, false ], "11230", "40.617702", "-73.962525", "14", "48", "768", "3180783", "3067410006", "Midwood                                                                    " ]
+, [ 75, "6021F3C8-0080-4AB9-BACF-76763FCF8AB0", 75, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Assistance Program", "York College Immigration     Center ? CUNY ", "Queens", "Research Foundation of CUNY", "718-262-2983", "All Ages", [ "{\"address\":\"20 Guy R Brewer Blvd\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11451\"}", "40.70259499975947", "-73.79562300040112", null, false ], null, null, null, null, null, null, null, null, null ]
+, [ 76, "7BA83AA3-BB2B-43D4-82C6-091C8E9ED917", 76, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Legal Services - Immigrant Youth", "Peter Cicchino Youth Project (PCYP)", "Manhattan", "Urban Justice Center", "646-602-5633", "20-May", [ "{\"address\":\"123 William Street\",\"city\":\"Manhattan\",\"state\":\"NEW YORK\",\"zip\":\"10038\"}", "40.70909122458545", "-74.006906978693", null, false ], "10038", "40.709112", "-74.006889", "1", "1", "1502", "1079063", "1000780004", "Battery Park City-Lower Manhattan                                          " ]
+, [ 77, "6C8638CD-E6B7-449E-96F5-97322F900134", 77, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Immigrant/Refugee Assistance", "Asian Americans for Equality - Queens", "Queens", "Asian Americans for Equality - Queens", "718.961.0888 or 212.979.8381", "Adult", [ "{\"address\":\"133 04 39th Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11354\"}", "40.76862022064671", "-73.82719028070687", null, false ], "11354", "40.75909", "-73.834194", "7", "20", "871", "4112274", "4049730006", "Flushing                                                                   " ]
+, [ 78, "AA0C89A7-1C3F-4AD7-ADEA-6E9481D27364", 78, 1505504791, "994730", 1505504791, "994730", null, "Immigration Services,Immigrant Support Services", "Domestic Violence Program", "Safe Space - Family Resource Center (Jamaica)", "Queens", "Safe Space", "718.785.9062", "All Ages", [ "{\"address\":\"90 25 161st Street\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11432\"}", "40.71311535449007", "-73.79282099978928", null, false ], "11432", "40.705199", "-73.799253", "12", "24", "44601", "4442231", "4097600001", "Jamaica                                                                    " ]
+ ]
+}
