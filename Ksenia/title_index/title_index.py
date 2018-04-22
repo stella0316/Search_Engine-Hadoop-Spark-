@@ -40,7 +40,20 @@ def create_pairs(pair):
 	output = map(lambda x: (x[0],((doc_id, x[1]),)),output)
 	return output
 
+def format_output(line):
+	'''
+	Format string for output
+	'''
+	doc_list = line[2]
+	docs = []
+	for doc in doc_list:
+		docs.append(doc[0])
+	docs = ','.join(docs)
+	output = line[0] + '\t' + str(line[1]) + '\t' + '(' + docs + ')'
+	return output
+
 inverted_index = data.flatMap(create_pairs).reduceByKey(lambda a,b: a+b)
-inverted_index = inverted_index.map(lambda line: (line[0], len(line[1]), line[1])).sortBy(lambda x: x[1],ascending=False) #organize and sort
+inverted_index = inverted_index.map(lambda line: (line[0], len(line[1]), line[1])).sortBy(lambda x: x[1],ascending=False)\
+	.map(lambda x: (x[0], x[1], sorted(x[2], key = lambda y: -y[1]))).map(format_output) #organize and sort
 print(inverted_index.take(2)) #print to check the output looks correct
-inverted_index.saveAsTextFile("inverted_index_sample.out")
+inverted_index.saveAsTextFile("inverted_index_sample.txt")

@@ -2,7 +2,7 @@
 module load python/gnu/3.4.4
 module load spark/2.2.0
 
-FILENAME="inverted_index_sample.out"
+FILENAME="inverted_index_sample.txt"
 
 /usr/bin/hadoop fs -rm -r "$FILENAME"
 
