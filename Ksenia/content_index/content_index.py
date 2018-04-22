@@ -32,29 +32,39 @@ def create_pairs(pair):
   '''
   doc_id = pair[0]
   name = pair[1]
-  table = str.maketrans(dict.fromkeys('()!-,',' '))
+  table = str.maketrans(dict.fromkeys('\n()\"!-,',' '))
   name = name.translate(table) #remove unnecessary elements
   name = name.lower() #convert to lower case
-
+  name.replace
   words = name.split(' ')                                                                                                                 
   words = map(lambda x: x.strip(),words)#remove trailing whitespaces                                                                      
   words = filter(None, words)#remove Nans                                                                                                 
-  counter = Counter(words)                                                                                                                
-                                                                                                                                          
+  counter = Counter(words)                                                                                                                                                                                                             
   output = []                                                                                                                             
   for word, count in counter.items():                                                                                                     
-    output.append((word,count))                                                                                                           
-                                                                                                                                          
+    output.append((word,count))                                                                                                                                                                                
   output = map(lambda x: (x[0],((doc_id, x[1]),)),output)                                                                                 
   return output  
 
+def format_output(line):
+	'''
+	Format string for output
+	'''
+	doc_list = line[2]
+	docs = []
+	for doc in doc_list:
+		docs.append(doc[0])
+	docs = ','.join(docs)
+	output = line[0] + '\t' + str(line[1]) + '\t' + '(' + docs + ')'
+	return output
 
 
 #Preprocess text data: remove title, spaces, unnecessary symbols.
 inverted_index = joined.flatMap(create_pairs).reduceByKey(lambda a,b: a+b)
-inverted_index = inverted_index.map(lambda line: (line[0], len(line[1]), line[1])).sortBy(lambda x: x[1],ascending=False) #organize and sort
+inverted_index = inverted_index.map(lambda line: (line[0], len(line[1]), line[1])).sortBy(lambda x: x[1],ascending=False)\
+	.map(lambda x: (x[0], x[1], sorted(x[2], key = lambda y: -y[1]))).map(format_output) #organize and sort
 print(inverted_index.take(2)) #print to check the output looks correct
 
-inverted_index.saveAsTextFile("content_index.out")   
+inverted_index.saveAsTextFile("content_index.txt")   
 
 
