@@ -2,7 +2,7 @@
 module load python/gnu/3.4.4
 module load spark/2.2.0
 
-FILENAME="content_index.out"
+FILENAME="content_index.txt"
 
 /usr/bin/hadoop fs -rm -r "$FILENAME"
 
