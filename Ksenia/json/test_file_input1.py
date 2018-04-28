@@ -1,9 +1,4 @@
-import sys
-import os
 from pyspark import SparkContext
-from pyspark.sql import SparkSession
-import pandas as pd
-from pyspark.sql.types import *
 import pandas as pd
 import subprocess
 import json
@@ -26,15 +21,16 @@ for f in fs.get(conf).listStatus(path):
 	if len(out)==0:
 		print('empty')
 		continue
-	#json_string = out.decode('utf-8')
 	print('Processing: ', file_path)
 	data_chunk = json.loads(out.decode('utf-8'))
 	column_infos = data_chunk['meta']['view']['columns']
 	column_names = [info['name'] for info in column_infos]
 	data_rows = data_chunk['data']
 	out = pd.DataFrame(data_rows, columns = column_names)
+	out.drop(['sid','id','position','created_at','created_meta','updated_at','updated_meta','meta'],axis=1,inplace=True)
 	file_name = data_chunk['meta']['view']['name'] 
-	file_name.replace(":","")
+	file_name = file_name.replace(":","")
+	#print(file_name)
 	out.to_csv('nyc_processed_data/'+file_name+'.csv')
-	print('Done with', str(count))
 	count+=1
+	print('Loaded ', str(count), 'documents')
