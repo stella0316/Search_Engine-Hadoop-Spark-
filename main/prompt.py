@@ -49,7 +49,7 @@ def prompt():
 
 def main():
 	search_type, words, row_filter = prompt()
-	process = subprocess.check_output(["bash","start_program.sh",search_type,words,row_filter)])
+	process = subprocess.check_output(["bash","start_program.sh",search_type,words,row_filter])
 
 if __name__ == "__main__":
 	main()
