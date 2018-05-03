@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OUTFILE="tfidf.out"
+OUTFILE="tfidf_column.out"
 
 if [ -e "$OUTFILE" ]
 then
