@@ -5,47 +5,10 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import *
 from pyspark.sql import Row
 
-spark = SparkSession \
-        .builder \
-        .appName("Python Spark SQL basic example") \
-        .config("spark.some.config.option", "some-value") \
-        .getOrCreate()
-
-sc = spark.sparkContext
-
-#read all inverted_index files
-title_line = sc.textFile(sys.argv[1])
-column_line = sc.textFile(sys.argv[2])
-content_line = sc.textFile(sys.argv[3])
-
-#map to rdd
-title_parts = title_line.map(lambda l: l.split('\t')
-title_rdd =  title_parts.map(lambda p: Row(key=p[0], count = int(p[1]), docs = [int(p_.replace("'",'')) for p_ in p[2].split(',')]))
-
-column_parts = column_line.map(lambda l:l.split('\t')
-column_rdd = column_parts.map(lambda p:Row(key=p[0], count = int(p[1]), docs = [int(p_.replace("'",'')) for p_ in p[2].split(',')]))
-
-content_parts = content_line.map(lambda l: l.split("\t"))
-content_rdd = content_parts.map(lambda p:Row(key=p[0], count = int(p[1]), docs = [int(p_.replace("'",'')) for p_ in p[2].split(',')]))
-
-#create table from rdds
-title_search_index = spark.createDataFrame(title_rdd)
-column_search_index = spark.createDataFrame(column_rdd)
-cotent_search_index = spark.createDataFrame(content_redd)
-
-#create temp view for tables
-title_search_index.createOrReplaceTempView("title_search_index")
-column_search_index.createOrReplaceTempView("column_search_index")
-content_search_index.createOrReplaceTempView("content_search_index")
-
-#read master index from csv files
-master_index = spark.read.format('csv').options(header='true',inferschema='true').load(sys.argv[4])
-master_index.createOrReplaceTempView("master_index")
-
 
 def prompt():
 	while True:
-		search_type = input("Select type(s) of search you want to do:\n 1 = Title, 2= Column, 3= Content.\n Separate by comma if you select multiple types:\n" )
+		search_type = input("Select type(s) of search you want to do:\n 1 = Title, 2= Column, 3= Content, 4 = Topic\n Separate by comma if you select multiple types:\n" )
 
 
 		values = search_type.split(',')
@@ -90,86 +53,139 @@ def prompt():
                 
 	return search_type, words, row_filter
 
+def getInput(search_type,words,row_filter):
+	types = search_type.split(',')
+	for t in types:
+		function_dict[search_type_dict[t]](words,row_filter)
 
 def title_search(words,row_filter):
-    if row_filter == 'n' or 'N':
-        min_row = 0
-    else:
-        min_row = int(row_filter)
-  
-    new_list = ['"%' + w.strip().lower() + '%"' for w in words]
-    
-    query_1 = "SELECT docs FROM title_search_index WHERE key like"  
-    query_2 = ' OR '.join(new_list)
-    query = query_1 + query_2 
-    
-    ID_list = spark.sql(query).collect()[0][0]
-    
-    query_3 = "AND File_Length >= " + row_filter  
-    result = master_index.where(col("Doc_ID").isin(ID_list)).filter(query_3).select(master_index.Table_Name)
-    
-    return result.show()
 
+	if row_filter == 'n' or 'N':
+		min_row = 0
+	else:
+		min_row = int(row_filter)
+  
+	new_list = ['"%' + w.strip().lower() + '%"' for w in words]
+	ID_list = list()
+
+	for w in new_list:
+		query = "SELECT docs FROM title_search_index WHERE key like %s" % w  
+		try:
+			IDs = spark.sql(query).collect()[0][0]
+		except IndexError:
+			continue
+		ID_list.append(IDs)
+        
+	re = set(ID_list[0])
+	for s in ID_list[1:]:
+		re.intersection_update(s)
+	re = list(re)
+
+	query_2 = "Table_Length >= " + row_filter  
+	result = master_index.where(col("Doc_ID").isin(re)).filter(query_2).select(master_index.Table_Name)
+    
+	return result.show()
 
 def column_search(words,row_filter):
-    if row_filter == 'n' or 'N':
-        min_row = 0
-    else:
-        min_row = int(row_filter)
+	if row_filter == 'n' or 'N':
+		min_row = 0
+
+	else:
+		min_row = int(row_filter)
+  
+	new_list = ['"%' + w.strip().lower() + '%"' for w in words]
+	ID_list = list()
+
+	for w in new_list:
+		query = "SELECT docs FROM column_search_index WHERE key like %s" % w
+		try:
+			IDs = spark.sql(query).collect()[0][0]
+		except IndexError:
+			continue
+		ID_list.append(IDs)
+        
+	re = set(ID_list[0])
+	for s in ID_list[1:]:
+		re.intersection_update(s)
+	re = list(re)
+
+
+	query_2 = "Table_Length >= " + row_filter  
+	result = master_index.where(col("Doc_ID").isin(re)).filter(query_2).select(master_index.Table_Name)
     
-    new_list = ['"%' + w.strip().lower() + '%"' for w in words]
-    query_1 = "SELECT docs FROM column_search_index WHERE key like"  
-    query_2 = ' OR '.join(new_list)
-    query = query_1 + query_2 
-    
-    ID_list = spark.sql(query).collect()[0][0]
-    
-    query_3 = "AND File_Length >= " + row_filter  
-    result = master_index.where(col("Doc_ID").isin(ID_list)).filter(query_3).select(master_index.Table_Name)
-    
-    
-    return result.show()
+	return result.show()
+
 
 def content_search(words,row_filter):
-    if row_filter == 'n' or 'N':
-        min_row = 0
-    else:
-        min_row = int(row_filter)
+
+	if row_filter == 'n' or 'N':
+		min_row = 0
+	else:
+		min_row = int(row_filter)
+  
+	new_list = ['"%' + w.strip().lower() + '%"' for w in words]
+	ID_list = list()
+    
+	for w in new_list:
+		query = "SELECT docs FROM content_search_index WHERE key like %s" % w
+		try: 
+			IDs = spark.sql(query).collect()[0][0]
+		except IndexError:
+			continue
+		ID_list.append(IDs)
         
-    new_list = ['"%' + w.strip().lower() + '%"' for w in words]
-    query_1 = "SELECT docs FROM content_search_index WHERE key like"  
-    query_2 = ' OR '.join(new_list)
-    query = query_1 + query_2 
+	re = set(ID_list[0])
     
-    ID_list = spark.sql(query).collect()[0][0]
+	for s in ID_list[1:]:
+		re.intersection_update(s)
+	re = list(re)
+	
+	query_2 = "Table_Length >= " + row_filter  
+	result = master_index.where(col("Doc_ID").isin(re)).filter(query_2).select(master_index.Table_Name)
     
-    query_3 = "AND File_Length >= " + row_filter  
-    result = master_index.where(col("Doc_ID").isin(ID_list)).filter(query_3).select(master_index.Table_Name)
+	return result.show()
+
+
+def topic_search(words,row_filter):
+	if row_filter == 'n' or 'N':
+		min_row = 0
+	else:
+		min_row = int(row_filter)
+  
+	new_list = ['"%' + w.strip().lower() + '%"' for w in words]
+	ID_list = list()
     
-    return result.show()
+
+	for w in new_list:
+		query = "SELECT docs FROM tag_index WHERE key like %s" % w 
+		try: 
+			IDs = spark.sql(query).collect()[0][0]
+		except IndexError:
+			continue
+		ID_list.append(IDs)
+        
+	re = set(ID_list[0])
+	for s in ID_list[1:]:
+		re.intersection_update(s)
+	re = list(re)
+	
+	query_2 = "Table_Length >= " + row_filter  
+	result = master_index.where(col("Doc_ID").isin(re)).filter(query_2).select(master_index.Table_Name)
+    
+	return result.show()
+
+
+search_type_dict = {'1':'title_search','2':'column_search','3':'content_search','4':'topic_search'}
+function_dict = {'title_search':title_search,'column_search':column_search,'content_search':content_search,'topic_search':topic_search}
 
 def getInput(search_type,words,row_filter):
-    types = search_type.split(',')
-    for t in types:
-        function_dict[search_type_dict[t]](words,row_filter)
+	types = search_type.split(',')
+	for t in types:
+		function_dict[search_type_dict[t]](words,row_filter)
 
-search_type_dict = {'1':'title_search','2':'column_search','3':'content_search'}
-function_dict = {'title_search':title_search,'column_search':column_search,'content_search':content_search}
 
 def main():
-
-	
-	search_type, keywords, row_filter = prompt()
-    
-	#for search in search_type:
-
-	#	if search == '1':
-	#		title_result = title_search(keywords,row_filter)
-         #   
-	#	elif search == '2':
-	#		column_result = column_search(keywords,row_filter)
-	#	else:
-	#		content_result = content_search(keywords,row_filter)
+	search_type, words, row_filter = ('3', ['new','york', 'taxi'], '3')
     
 	getInput(search_type,words,row_filter)
     
@@ -177,4 +193,50 @@ def main():
 
 
 if __name__ == "__main__":
+	spark = SparkSession \
+        	.builder \
+        	.appName("Python Spark SQL basic example") \
+        	.config("spark.some.config.option", "some-value") \
+        	.getOrCreate()
+
+	sc = spark.sparkContext
+	
+	#get input parameters
+	title_line = sc.textFile(sys.argv[1])
+	column_line = sc.textFile(sys.argv[2])
+	content_line = sc.textFile(sys.argv[3])
+	
+	#map to rdd
+	title_parts = title_line.map(lambda l: l.split('\t'))
+	title_rdd =  title_parts.map(lambda p: Row(key=p[0], docs = [int(p_.replace("'",'')) for p_ in p[2].replace('(','').replace(')','').split(',')]))	
+	
+	column_parts = column_line.map(lambda l:l.split('\t'))
+	column_rdd = column_parts.map(lambda p:Row(key=p[0],
+                    docs = [int(_l) for _l in p[2].replace('(','').replace(')','').split(',')[0::2]],
+                    cols = [p[2].replace('(','').replace(')','').split(',')[1::2]]))	
+        
+	content_parts = content_line.map(lambda l: l.split("\t"))
+	content_rdd =  content_parts.map(lambda p: Row(key=p[0], docs = [int(p_.replace("'",'')) for p_ in p[2].replace('(','').replace(')','').split(',')]))
+	
+	#create table from rdds
+	title_search_index = spark.createDataFrame(title_rdd)
+	column_search_index = spark.createDataFrame(column_rdd)
+	content_search_index = spark.createDataFrame(content_rdd)
+
+	#create temp view for tables
+	title_search_index.createOrReplaceTempView("title_search_index")
+	column_search_index.createOrReplaceTempView("column_search_index")
+	content_search_index.createOrReplaceTempView("content_search_index")
+
+
+	#read master index from csv files
+	master_index = spark.read.format('csv').options(header='true',inferschema='true').load(sys.argv[4])
+	master_index.createOrReplaceTempView("master_index")
+
+	tag_index = spark.read.format('csv').options(header='true',inferschema='true').load(sys.argv[5])
+	tag_index.createOrReplaceTempView("tag_index")
+
+	table_desc = spark.read.format('csv').options(header='true',inferschema='true').load(sys.argv[6])
+	table_desc.createOrReplaceTempView("table_desc")
+
 	main()
