@@ -185,7 +185,7 @@ def getInput(search_type,words,row_filter):
 
 
 def main():
-	search_type, words, row_filter = ('3', ['new','york', 'taxi'], '3')
+	#search_type, words, row_filter = ('3', ['new','york', 'taxi'], '3')
     
 	getInput(search_type,words,row_filter)
     
@@ -238,5 +238,8 @@ if __name__ == "__main__":
 
 	table_desc = spark.read.format('csv').options(header='true',inferschema='true').load(sys.argv[6])
 	table_desc.createOrReplaceTempView("table_desc")
-
+	
+	search_type = sys.argv[7]
+	words = sys.argv[8]
+	row_filter = sys.argv[8]
 	main()
