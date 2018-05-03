@@ -6,7 +6,9 @@ from operator import add
 from collections import Counter
 from pyspark import SparkContext
 from pyspark.sql import SparkSession
-from pyspark.mllib.feature import HashingTF, IDF
+from pyspark.mllib.feature import HashingTF, IDF, Normalizer
+from pyspark.mllib.regression import LabeledPoint
+from pyspark.mllib.util import MLUtils
 #from pyspark.sql import Row
 
 porter = nltk.stem.PorterStemmer()
@@ -40,16 +42,15 @@ tf = hashingTF.transform(documents)
 tf.cache()
 idf = IDF().fit(tf)
 tfidf = idf.transform(tf)
-tfidf.cache()
-tfidf.saveAsTextFile("tfidf.out")
+normalizer = Normalizer()
+tfidfData = titles.zip(normalizer.transform(tfidf)).map(lambda x: LabeledPoint(x[0], x[1]))
+#MLUtils.saveAsLibSVMFile(tfidfData, "tfidf_column.out")
 
-'''
-queryTF = hashingTF.transform(["organization"])
-queryHashValue = queryTF.indices[0]
-queryRelevance = tfidf.map(lambda x: x[queryHashValue])
-zippedResults = queryRelevance.zip(titles)
-zippedResults.saveAsTextFile("result.out")
-'''
+query = parse((0, "dBn location name location category administrative"))[1]
+queryTF = hashingTF.transform(query)
+queryTFIDF = normalizer.transform(idf.transform(queryTF))
+queryRelevance = tfidfData.map(lambda x: (x.label, x.features.dot(queryTFIDF))).sortBy(lambda x: -x[1])
+queryRelevance.saveAsTextFile("tfidf_column.out")
 
 '''
 def createPairs(doc):
