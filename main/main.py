@@ -13,15 +13,19 @@ def getInput(search_type,words,row_filter):
 
 def title_search(words,row_filter):
 
+	words = words.split(',')
 	if row_filter == 'n' or 'N':
 		min_row = 0
 	else:
 		min_row = row_filter
-  
+	print(words)
 	new_list = ['"%' + w.strip().lower() + '%"' for w in words]
+
 	ID_list = list()
 
 	for w in new_list:
+		print(w)
+		w=w.replace('[','').replace(']','')
 		query = "SELECT docs FROM title_search_index WHERE key like %s" % w  
 		try:
 			IDs = spark.sql(query).collect()[0][0]
