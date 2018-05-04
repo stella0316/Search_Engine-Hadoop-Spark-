@@ -2,7 +2,7 @@ import subprocess
 
 def prompt():
 	while  True:
-		search_type = input("Select type(s) of search you want to do:\n 1 = Title, 2= Column, 3= Content, 4 = Topic\n Separate by comma if you select multiple types:\n" )
+		search_type = input("Select type(s) of search you want to perform:\n 1 = Title, 2= Column, 3= Content, 4 = Topic\n Separate by comma if you select multiple types:\n" )
 
 
 		values = search_type.split(',')
@@ -26,11 +26,12 @@ def prompt():
 		keywords = input("Enter keywords for your search separated by comma")
 
 	words = keywords.split(',')
+	#words = keywords
 
     	#Filter
 	row_filter = input("Please enter minimum number of rows per table. Enter n to ignore:\n")
 
-	while len(row_filter) != 1:
+	while len(row_filter) < 1:
 		print('Please enter valid input')
 		row_filter = input("Please enter minimum number of rows per table. Enter n to ignore:\n")
 
@@ -43,15 +44,28 @@ def prompt():
 				break
 			except ValueError:
 				print('Please enter valid input')
-				row_filter = input("Please enter minimum number of rows per table. Enter n to ignore")
+				row_filter = input("Please enter minimum number of rows per table. Enter 'n' to ignore")
                 
 	return search_type, words, row_filter
 
 def main():
+
+	a ='''\
+
+ Hello! Welcome to: 
+  _   _  __     __   _____      _____                                _     
+ | \ | | \ \   / /  / ____|    / ____|                              | |    
+ |  \| |  \ \_/ /  | |        | (___     ___    __ _   _ __    ___  | |__  
+ | . ` |   \   /   | |         \___ \   / _ \  / _` | | '__|  / __| | '_ \ 
+ | |\  |    | |    | |____     ____) | |  __/ | (_| | | |    | (__  | | | |
+ |_| \_|    |_|     \_____|   |_____/   \___|  \__,_| |_|     \___| |_| |_|
+ '''                                                                     
+                                                                           
+	print(a)
 	search_type, words, row_filter = prompt()
-	process = subprocess.check_output(["bash","start_program.sh",search_type,words,row_filter])
+	#print(words)
+	words = "["+','.join(words)+"]"
+	process = subprocess.call(["bash","call_program.sh",search_type,words,row_filter])
 
 if __name__ == "__main__":
 	main()
-
-
