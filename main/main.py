@@ -12,19 +12,16 @@ def getInput(search_type,words,row_filter):
 
 
 def title_search(words,row_filter):
-
-	words = words.split(',')
+	words = words.split(',')	
 	if row_filter == 'n' or 'N':
 		min_row = 0
 	else:
 		min_row = row_filter
-	print(words)
+  
 	new_list = ['"%' + w.strip().lower() + '%"' for w in words]
-
 	ID_list = list()
 
 	for w in new_list:
-		print(w)
 		w=w.replace('[','').replace(']','')
 		query = "SELECT docs FROM title_search_index WHERE key like %s" % w  
 		try:
@@ -78,7 +75,7 @@ def column_search(words,row_filter):
 		table = master_index.where(col("Doc_ID").isin(re)).filter(query_2)
 		if table.count() != 0:
 			print("Here is your column search result")
-			result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).select(table.Table_Name,table_desc.Category, table_desc.Description).show()
+			result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).select(table.Table_Name,table_desc.Columns).show()
 		else:
 			print("Sorry, nothing matches, please try a different keyword") 
 
@@ -130,7 +127,7 @@ def topic_search(words,row_filter):
     
 
 	for w in new_list:
-		query = "SELECT docs FROM tag_index WHERE key like %s" % w 
+		query = "SELECT Doc_ID FROM tag_index WHERE key like %s" % w 
 		try: 
 			IDs = spark.sql(query).collect()[0][0]
 		except IndexError:
@@ -167,7 +164,6 @@ def getInput(search_type,words,row_filter):
 def main():
     
 	getInput(search_type,words,row_filter)
-    
 
 
 if __name__ == "__main__":
@@ -190,8 +186,7 @@ if __name__ == "__main__":
 	
 	column_parts = column_line.map(lambda l:l.split('\t'))
 	column_rdd = column_parts.map(lambda p:Row(key=p[0],
-                    docs = [int(_l) for _l in p[2].replace('(','').replace(')','').split(',')[0::2]],
-                    cols = [p[2].replace('(','').replace(')','').split(',')[1::2]]))	
+                    docs = [int(p_.replace("'",'')) for p_ in p[2].replace('(','').replace(')','').split(',')]))	
         
 	content_parts = content_line.map(lambda l: l.split("\t"))
 	content_rdd =  content_parts.map(lambda p: Row(key=p[0], docs = [int(p_.replace("'",'')) for p_ in p[2].replace('(','').replace(')','').split(',')]))
