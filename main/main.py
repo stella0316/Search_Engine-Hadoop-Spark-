@@ -29,7 +29,7 @@ def title_search(words,row_filter):
 			continue
 		ID_list.append(IDs)
 	if len(ID_list) == 0:
-		result = "Sorry, nothing matches, please try a different keyword"
+		print("Sorry, nothing matches, please try a different keyword")
 	else:        
 		re = set(ID_list[0])
 		for s in ID_list[1:]:
@@ -38,9 +38,11 @@ def title_search(words,row_filter):
 
 		query_2 = "Table_Length >= " + str(min_row) 
 		table = master_index.where(col("Doc_ID").isin(re)).filter(query_2)
-		result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).select(table.Table_Name,table_desc.Category, table_desc.Description).show()
-    
-	return result
+		if table.count() != 0:
+			print("Here is your title search result")
+			result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).select(table.Table_Name,table_desc.Category, table_desc.Description).show()
+		else:
+			print("Sorry, nothing matches, please try a different keyword")
 
 def column_search(words,row_filter):
 	if row_filter == 'n' or 'N':
@@ -61,18 +63,20 @@ def column_search(words,row_filter):
 		ID_list.append(IDs)
 
 	if len(ID_list) == 0:
-		result = "Sorry, nothing matches, please try a different keyword"
+		print("Sorry, nothing matches, please try a different keyword")
 	else: 
 		re = set(ID_list[0])
 		for s in ID_list[1:]:
 			re.intersection_update(s)
 		re = list(re)
 
-
 		query_2 = "Table_Length >= " + str(min_row)  
 		table = master_index.where(col("Doc_ID").isin(re)).filter(query_2)
-		result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).select(table.Table_Name,table_desc.Category, table_desc.Description).show() 
-	return result
+		if table.count() != 0:
+			print("Here is your column search result")
+			result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).select(table.Table_Name,table_desc.Category, table_desc.Description).show()
+		else:
+			print("Sorry, nothing matches, please try a different keyword") 
 
 
 def content_search(words,row_filter):
@@ -93,19 +97,22 @@ def content_search(words,row_filter):
 			continue
 		ID_list.append(IDs)
 	if len(ID_list) == 0:
-		result = "Sorry, nothing matches, please try a different keyword"
+		print("Sorry, nothing matches, please try a different keyword")
+
 	else: 
 		re = set(ID_list[0])
     
 		for s in ID_list[1:]:
 			re.intersection_update(s)
 		re = list(re)
-	
 		query_2 = "Table_Length >= " + str(min_row)
 		table = master_index.where(col("Doc_ID").isin(re)).filter(query_2)
-		result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).select(table.Table_Name,table_desc.Category, table_desc.Description).show()
+		if table.count() != 0:
+			print("Here is your content search result")
+			result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).select(table.Table_Name,table_desc.Category, table_desc.Description).show()
+		else:
+			print("Sorry, nothing matches, please try a different keyword")
     
-	return result
 
 
 def topic_search(words,row_filter):
@@ -127,7 +134,7 @@ def topic_search(words,row_filter):
 		ID_list.append(IDs)
 
 	if len(ID_list) == 0:
-		result = "Sorry, nothing matches, please try a different keyword"
+		print("Sorry, nothing matches, please try a different keyword")
 	else: 
 		re = set(ID_list[0])
 		for s in ID_list[1:]:
@@ -136,9 +143,12 @@ def topic_search(words,row_filter):
 	
 		query_2 = "Table_Length >= " + str(min_row)
 		table = master_index.where(col("Doc_ID").isin(re)).filter(query_2)
-		result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).select(table.Table_Name,table_desc.Category, table_desc.Description).show()  
+		if table.count() != 0:
+			print("Here is your topic search result")
+			result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).select(table.Table_Name,table_desc.Category, table_desc.Description).show()  
+		else:
+			print("Sorry, nothing matches, please try a different keyword")
     
-	return result
 
 
 search_type_dict = {'1':'title_search','2':'column_search','3':'content_search','4':'topic_search'}
@@ -151,11 +161,9 @@ def getInput(search_type,words,row_filter):
 
 
 def main():
-	#search_type, words, row_filter = ('1,3', ['new','york', 'taxi'], '3')
     
 	getInput(search_type,words,row_filter)
     
-	#print(search_type,words,row_filter)
 
 
 if __name__ == "__main__":
@@ -202,7 +210,7 @@ if __name__ == "__main__":
 	tag_index = spark.read.format('csv').options(header='true',inferschema='true').load(sys.argv[5])
 	tag_index.createOrReplaceTempView("tag_index")
 
-	table_desc = spark.read.format('csv').options(header='true',inferschema='true').load(sys.argv[6])
+	table_desc = spark.read.format('csv').options(header='true',inferschema='true',delimiter = ',').load(sys.argv[6])
 	table_desc.createOrReplaceTempView("table_desc")
 	
 	search_type = sys.argv[7]
