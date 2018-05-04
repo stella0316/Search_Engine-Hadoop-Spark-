@@ -30,7 +30,7 @@ def title_search(words,row_filter):
 			continue
 		ID_list.append(IDs)
 	if len(ID_list) == 0:
-		print("Sorry, nothing matches, please try a different keyword")
+		print("Sorry, nothing matched in title search, please try a different keyword")
 	else:        
 		re = set(ID_list[0])
 		for s in ID_list[1:]:
@@ -43,7 +43,7 @@ def title_search(words,row_filter):
 			print("Here is your title search result")
 			result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).select(table.Table_Name,table_desc.Category, table_desc.Description).show()
 		else:
-			print("Sorry, nothing matches, please try a different keyword")
+			print("Sorry, nothing matched in title search, please try a different keyword")
 
 def column_search(words,row_filter):
 	if row_filter == 'n' or 'N':
@@ -64,7 +64,7 @@ def column_search(words,row_filter):
 		ID_list.append(IDs)
 
 	if len(ID_list) == 0:
-		print("Sorry, nothing matches, please try a different keyword")
+		print("Sorry, nothing matched in column search, please try a different keyword")
 	else: 
 		re = set(ID_list[0])
 		for s in ID_list[1:]:
@@ -77,7 +77,7 @@ def column_search(words,row_filter):
 			print("Here is your column search result")
 			result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).select(table.Table_Name,table_desc.Columns).show()
 		else:
-			print("Sorry, nothing matches, please try a different keyword") 
+			print("Sorry, nothing matched in column search, please try a different keyword") 
 
 
 def content_search(words,row_filter):
@@ -98,7 +98,7 @@ def content_search(words,row_filter):
 			continue
 		ID_list.append(IDs)
 	if len(ID_list) == 0:
-		print("Sorry, nothing matches, please try a different keyword")
+		print("Sorry, nothing matched in content search, please try a different keyword")
 
 	else: 
 		re = set(ID_list[0])
@@ -112,7 +112,7 @@ def content_search(words,row_filter):
 			print("Here is your content search result")
 			result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).select(table.Table_Name,table_desc.Category, table_desc.Description).show()
 		else:
-			print("Sorry, nothing matches, please try a different keyword")
+			print("Sorry, nothing matched in content search, please try a different keyword")
     
 
 
@@ -135,7 +135,7 @@ def topic_search(words,row_filter):
 		ID_list.append(IDs)
 
 	if len(ID_list) == 0:
-		print("Sorry, nothing matches, please try a different keyword")
+		print("Sorry, nothing matched, please try a different keyword")
 	else: 
 		re = set(ID_list[0])
 		for s in ID_list[1:]:
@@ -148,7 +148,7 @@ def topic_search(words,row_filter):
 			print("Here is your topic search result")
 			result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).select(table.Table_Name,table_desc.Category, table_desc.Description).show()  
 		else:
-			print("Sorry, nothing matches, please try a different keyword")
+			print("Sorry, nothing matched, please try a different keyword")
     
 
 
