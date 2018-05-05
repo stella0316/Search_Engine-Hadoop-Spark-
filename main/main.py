@@ -85,6 +85,7 @@ def column_search(words,row_filter):
     tfidfData = titles.zip(tfidf).map(lambda x: LabeledPoint(x[0], x[1]))
     tfidfData = titles.zip(tfidf).toDF(["label", "features"])
     
+    query = parse((0, words.join(" ")))[1]
     queryTF = hashingTF.transform(query)
     queryTFIDF = normalizer.transform(idf.transform(queryTF))
     queryRelevance = tfidfData.rdd.map(lambda x: (x[0], x[1].dot(queryTFIDF))).sortBy(lambda x: -x[1])
