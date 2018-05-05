@@ -8,7 +8,8 @@ from pyspark import SparkContext
 from pyspark.sql import SparkSession
 from pyspark.mllib.feature import HashingTF, IDF, Normalizer
 from pyspark.mllib.regression import LabeledPoint
-from pyspark.mllib.util import MLUtils
+#from pyspark.mllib.util import MLUtils
+#from pyspark.mllib.linalg import Vectors
 #from pyspark.sql import Row
 
 porter = nltk.stem.PorterStemmer()
@@ -20,7 +21,6 @@ spark = SparkSession.builder.appName("column index").config("spark.some.config.o
 columnName = spark.read.format('csv').options(header='true',inferschema='true').load(sys.argv[1])
 masterIndex = spark.read.format('csv').options(header='true',inferschema='true').load(sys.argv[2])
 rawData = columnName.join(masterIndex, columnName['Name']==masterIndex['Table_Name'])
-#data.coalesce(1).write.save("column_index.csv", format='csv',header='true')
 rawData = rawData.rdd
 
 def parse(doc):
@@ -41,15 +41,18 @@ hashingTF = HashingTF()
 tf = hashingTF.transform(documents)
 tf.cache()
 idf = IDF().fit(tf)
-tfidf = idf.transform(tf)
 normalizer = Normalizer()
-tfidfData = titles.zip(normalizer.transform(tfidf)).map(lambda x: LabeledPoint(x[0], x[1]))
+tfidf = normalizer.transform(idf.transform(tf))
+tfidfData = titles.zip(tfidf).map(lambda x: LabeledPoint(x[0], x[1]))
+tfidfData = titles.zip(tfidf).toDF(["label", "features"])
+#idf.rdd.saveAsTextFile("idf_model")
+#sc.parallelize(idf.idf()).coalesce(1).saveAsTextFile("idf")
 #MLUtils.saveAsLibSVMFile(tfidfData, "tfidf_column.out")
 
-query = parse((0, "dBn location name location category administrative"))[1]
+query = parse((0, "location_id organization_id name latitude longitude bbl bin cd council nta tract"))[1]
 queryTF = hashingTF.transform(query)
 queryTFIDF = normalizer.transform(idf.transform(queryTF))
-queryRelevance = tfidfData.map(lambda x: (x.label, x.features.dot(queryTFIDF))).sortBy(lambda x: -x[1])
+queryRelevance = tfidfData.rdd.map(lambda x: (x[0], x[1].dot(queryTFIDF))).sortBy(lambda x: -x[1])
 queryRelevance.saveAsTextFile("tfidf_column.out")
 
 '''
@@ -78,7 +81,6 @@ def printResult(x):
 inverted_index = data.flatMap(createPairs).reduceByKey(add).map(inSort).map(lambda x: (x[0],len(x[1]),x[1])).sortBy(lambda x: -x[1]).map(printResult)
 inverted_index.saveAsTextFile("column_index.out")
 '''
-
 
 
 '''

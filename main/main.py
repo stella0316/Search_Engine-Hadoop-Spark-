@@ -1,9 +1,23 @@
 import os
 import sys
+import re
+import nltk
 from pyspark.sql.functions import format_string,date_format,col
 from pyspark.sql import SparkSession
 from pyspark.sql.types import *
 from pyspark.sql import Row
+from csv import reader
+from operator import add
+from collections import Counter
+from pyspark import SparkContext
+from pyspark.mllib.feature import HashingTF, IDF, Normalizer
+from pyspark.mllib.regression import LabeledPoint
+
+porter = nltk.stem.PorterStemmer()
+nltk.download('stopwords')
+stopWordList = set(nltk.corpus.stopwords.words("english"))
+sc = SparkContext()
+spark = SparkSession.builder.appName("column index").config("spark.some.config.option", "some-value").getOrCreate()
 
 def getInput(search_type,words,row_filter):
 	types = search_type.split(',')
@@ -45,7 +59,38 @@ def title_search(words,row_filter):
 		else:
 			print("Sorry, nothing matched in title search, please try a different keyword")
 
+def parse(doc):
+    docID = doc[0]
+    docData = doc[1]
+    docData = docData.lower()
+    docData = re.sub(r'[^a-z0-9 ]', ' ', docData)
+    docData = docData.split()
+    docData = [x for x in docData if x not in stopWordList]
+    docData = [porter.stem(word) for word in docData]
+    return (docID, docData)
+
 def column_search(words,row_filter):
+    rawData = table_cols.join(master_index, master_index["Table_Name"]==table_cols["Name"])
+    rawData = rawData.rdd
+    data = rawData.map(lambda x: (x['Name'], x['Columns'])).map(parse)
+
+    titles = data.map(lambda x: x[0])
+    documents = data.map(lambda x: x[1])
+    hashingTF = HashingTF()
+    tf = hashingTF.transform(documents)
+    tf.cache()
+    idf = IDF().fit(tf)
+    normalizer = Normalizer()
+    tfidf = normalizer.transform(idf.transform(tf))
+    tfidfData = titles.zip(tfidf).map(lambda x: LabeledPoint(x[0], x[1]))
+    tfidfData = titles.zip(tfidf).toDF(["label", "features"])
+    
+    queryTF = hashingTF.transform(query)
+    queryTFIDF = normalizer.transform(idf.transform(queryTF))
+    queryRelevance = tfidfData.rdd.map(lambda x: (x[0], x[1].dot(queryTFIDF))).sortBy(lambda x: -x[1])
+    queryRelevance = queryRelevance.toDF("Doc_ID", "scores")
+    result = queryRelevance.join(table_desc,queryRelevance.Doc_ID == table_desc.Doc_ID).show()
+    '''
 	if row_filter == 'n' or 'N':
 		min_row = 0
 
@@ -77,7 +122,9 @@ def column_search(words,row_filter):
 			print("Here is your column search result")
 			result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).select(table.Table_Name,table_desc.Columns).show()
 		else:
-			print("Sorry, nothing matched in column search, please try a different keyword") 
+			print("Sorry, nothing matched in column search, please try a different keyword")
+    '''
+
 
 
 def content_search(words,row_filter):
