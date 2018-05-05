@@ -72,7 +72,7 @@ def parse(doc):
 def column_search(words,row_filter):
     rawData = table_cols.join(master_index, master_index["Table_Name"]==table_cols["Name"])
     rawData = rawData.rdd
-    data = rawData.map(lambda x: (x['Name'], x['Columns'])).map(parse)
+    data = rawData.map(lambda x: (x['Doc_ID'], x['Columns'])).map(parse)
 
     titles = data.map(lambda x: x[0])
     documents = data.map(lambda x: x[1])
@@ -85,12 +85,13 @@ def column_search(words,row_filter):
     tfidfData = titles.zip(tfidf).map(lambda x: LabeledPoint(x[0], x[1]))
     tfidfData = titles.zip(tfidf).toDF(["label", "features"])
     
-    query = parse((0, words.join(" ")))[1]
+    query = parse((0, words))[1]
     queryTF = hashingTF.transform(query)
     queryTFIDF = normalizer.transform(idf.transform(queryTF))
-    queryRelevance = tfidfData.rdd.map(lambda x: (x[0], x[1].dot(queryTFIDF))).sortBy(lambda x: -x[1])
-    queryRelevance = queryRelevance.toDF("Doc_ID", "scores")
-    result = queryRelevance.join(table_desc,queryRelevance.Doc_ID == table_desc.Doc_ID).show()
+    queryRelevance = tfidfData.rdd.map(lambda x: (x[0], float(x[1].dot(queryTFIDF)))).sortBy(lambda x: -x[1])
+    queryRelevance = spark.createDataFrame(queryRelevance, ["Doc_ID", "scores"])
+    queryRelevance = queryRelevance.join(table_desc,queryRelevance.Doc_ID == table_desc.Doc_ID).select(table_desc.Doc_ID, queryRelevance.scores, table_desc.Columns)
+    queryRelevance.join(master_index, master_index.Doc_ID==queryRelevance.Doc_ID).select(queryRelevance.Doc_ID, queryRelevance.scores, master_index.Table_Name, queryRelevance.Columns).show()
     '''
 	if row_filter == 'n' or 'N':
 		min_row = 0
@@ -261,8 +262,7 @@ if __name__ == "__main__":
 	table_desc.createOrReplaceTempView("table_desc")
 
 	table_cols = spark.read.format('csv').options(header='true',inferschema='true',delimiter = ',').load(sys.argv[10])
-    table_cols.createOrReplaceTempView("table_cols")
-	
+
 	search_type = sys.argv[7]
 	words = sys.argv[8]
 	row_filter = sys.argv[9]
