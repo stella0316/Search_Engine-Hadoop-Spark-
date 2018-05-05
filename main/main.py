@@ -11,7 +11,6 @@ from operator import add
 from collections import Counter
 from pyspark import SparkContext
 from pyspark.mllib.feature import HashingTF, IDF, Normalizer
-from pyspark.mllib.regression import LabeledPoint
 
 porter = nltk.stem.PorterStemmer()
 nltk.download('stopwords')
@@ -27,7 +26,7 @@ def getInput(search_type,words,row_filter):
 
 def title_search(words,row_filter):
 	words = words.split(',')	
-	if row_filter == 'n' or 'N':
+	if row_filter == 'n' or row_filter == 'N':
 		min_row = 0
 	else:
 		min_row = row_filter
@@ -70,8 +69,13 @@ def parse(doc):
     return (docID, docData)
 
 def column_search(words,row_filter):
-    rawData = table_cols.join(master_index, master_index["Table_Name"]==table_cols["Name"])
-    rawData = rawData.rdd
+    
+    if row_filter == 'n' or row_filter == 'N':
+        min_row = 0
+    else:
+        min_row = row_filter
+
+    rawData = table_cols.join(master_index, master_index["Table_Name"]==table_cols["Name"]).rdd
     data = rawData.map(lambda x: (x['Doc_ID'], x['Columns'])).map(parse)
 
     titles = data.map(lambda x: x[0])
@@ -82,18 +86,19 @@ def column_search(words,row_filter):
     idf = IDF().fit(tf)
     normalizer = Normalizer()
     tfidf = normalizer.transform(idf.transform(tf))
-    tfidfData = titles.zip(tfidf).map(lambda x: LabeledPoint(x[0], x[1]))
     tfidfData = titles.zip(tfidf).toDF(["label", "features"])
     
     query = parse((0, words))[1]
     queryTF = hashingTF.transform(query)
     queryTFIDF = normalizer.transform(idf.transform(queryTF))
     queryRelevance = tfidfData.rdd.map(lambda x: (x[0], float(x[1].dot(queryTFIDF)))).sortBy(lambda x: -x[1])
-    queryRelevance = spark.createDataFrame(queryRelevance, ["Doc_ID", "scores"])
+    queryRelevance = queryRelevance.toDF(["Doc_ID", "scores"])
     queryRelevance = queryRelevance.join(table_desc,queryRelevance.Doc_ID == table_desc.Doc_ID).select(table_desc.Doc_ID, queryRelevance.scores, table_desc.Columns)
-    queryRelevance.join(master_index, master_index.Doc_ID==queryRelevance.Doc_ID).select(queryRelevance.Doc_ID, queryRelevance.scores, master_index.Table_Name, queryRelevance.Columns).show()
+    queryRelevance = queryRelevance.join(master_index, master_index.Doc_ID==queryRelevance.Doc_ID).select(queryRelevance.Doc_ID, queryRelevance.scores, master_index.Table_Name, queryRelevance.Columns, master_index.Table_Length)
+    queryRelevance = queryRelevance.rdd.filter(lambda x: int(x['Table_Length']) >= int(min_row)).toDF()
+    queryRelevance.show()
     '''
-	if row_filter == 'n' or 'N':
+	if row_filter == 'n' or row_filter == 'N':
 		min_row = 0
 
 	else:
@@ -131,7 +136,7 @@ def column_search(words,row_filter):
 
 def content_search(words,row_filter):
 
-	if row_filter == 'n' or 'N':
+	if row_filter == 'n' or row_filter == 'N':
 		min_row = 0
 	else:
 		min_row = row_filter
@@ -166,7 +171,7 @@ def content_search(words,row_filter):
 
 
 def topic_search(words,row_filter):
-	if row_filter == 'n' or 'N':
+	if row_filter == 'n' or row_filter == 'N':
 		min_row = 0
 	else:
 		min_row = row_filter
