@@ -23,6 +23,17 @@ def getInput(search_type,words,row_filter):
 	for t in types:
 		function_dict[search_type_dict[t]](words,row_filter)
 
+def jaccard_similarity(words,sentences):
+  ps = nltk.stem.PorterStemmer()
+  words = [ps.stem(word.strip().lower().replace('[','').replace(']','')) for word in words]
+  words = set(words)
+  out = []
+  for sentence in sentences:
+    list2 = re.findall(r"[\w']+", sentence)
+    words2 = set([ps.stem(word.strip().lower()) for word in list2])
+    score = len(set.intersection(words,words2))/len(set.union(words,words2))
+    out.append(score)
+  return out
 
 def title_search(words,row_filter):
 	words = words.split(',')	
@@ -53,8 +64,13 @@ def title_search(words,row_filter):
 		query_2 = "Table_Length >= " + str(min_row) 
 		table = master_index.where(col("Doc_ID").isin(re)).filter(query_2)
 		if table.count() != 0:
+			names = table.select("Table_Name").rdd.flatMap(lambda x: x).collect()                                                    
+			scores = jaccard_similarity(words,names)                                                                                 
+			ids = table.select("Doc_ID").rdd.flatMap(lambda x: x).collect()                                                          
+			scores = spark.createDataFrame(zip(ids,scores), ('Doc_IDs','Score'))                                                     
+			table = table.join(scores, table.Doc_ID == scores.Doc_IDs) 
 			print("Here is your title search result")
-			result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).select(table.Table_Name,table_desc.Category, table_desc.Description).show()
+			result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).orderBy('Score',ascending=False).select(table.Table_Name,table_desc.Category, table_desc.Description,table.Score).show()
 		else:
 			print("Sorry, nothing matched in title search, please try a different keyword")
 
@@ -94,7 +110,7 @@ def column_search(words,row_filter):
     queryRelevance = tfidfData.rdd.map(lambda x: (x[0], float(x[1].dot(queryTFIDF)))).sortBy(lambda x: -x[1])
     queryRelevance = queryRelevance.toDF(["Doc_ID", "scores"])
     queryRelevance = queryRelevance.join(table_desc,queryRelevance.Doc_ID == table_desc.Doc_ID).select(table_desc.Doc_ID, queryRelevance.scores, table_desc.Columns)
-    queryRelevance = queryRelevance.join(master_index, master_index.Doc_ID==queryRelevance.Doc_ID).select(queryRelevance.Doc_ID, queryRelevance.scores, master_index.Table_Name, queryRelevance.Columns, master_index.Table_Length)
+    queryRelevance = queryRelevance.join(master_index, master_index.Doc_ID==queryRelevance.Doc_ID).select(queryRelevance.Doc_ID, master_index.Table_Name, queryRelevance.Columns, queryRelevance.scores, master_index.Table_Length)
     queryRelevance = queryRelevance.rdd.filter(lambda x: int(x['Table_Length']) >= int(min_row)).toDF()
     queryRelevance.show()
     '''
