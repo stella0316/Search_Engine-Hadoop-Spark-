@@ -261,7 +261,7 @@ if __name__ == "__main__":
 	table_desc.createOrReplaceTempView("table_desc")
 
 	table_cols = spark.read.format('csv').options(header='true',inferschema='true',delimiter = ',').load(sys.argv[10])
-        table_cols.createOrReplaceTempView("table_cols")
+    table_cols.createOrReplaceTempView("table_cols")
 	
 	search_type = sys.argv[7]
 	words = sys.argv[8]
