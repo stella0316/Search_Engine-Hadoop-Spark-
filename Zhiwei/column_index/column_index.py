@@ -7,7 +7,6 @@ from collections import Counter
 from pyspark import SparkContext
 from pyspark.sql import SparkSession
 from pyspark.mllib.feature import HashingTF, IDF, Normalizer
-from pyspark.mllib.regression import LabeledPoint
 #from pyspark.mllib.util import MLUtils
 #from pyspark.mllib.linalg import Vectors
 #from pyspark.sql import Row
@@ -20,8 +19,7 @@ spark = SparkSession.builder.appName("column index").config("spark.some.config.o
 
 columnName = spark.read.format('csv').options(header='true',inferschema='true').load(sys.argv[1])
 masterIndex = spark.read.format('csv').options(header='true',inferschema='true').load(sys.argv[2])
-rawData = columnName.join(masterIndex, columnName['Name']==masterIndex['Table_Name'])
-rawData = rawData.rdd
+rawData = columnName.join(masterIndex, columnName['Name']==masterIndex['Table_Name']).rdd
 
 def parse(doc):
     docID = doc[0]
@@ -43,7 +41,6 @@ tf.cache()
 idf = IDF().fit(tf)
 normalizer = Normalizer()
 tfidf = normalizer.transform(idf.transform(tf))
-tfidfData = titles.zip(tfidf).map(lambda x: LabeledPoint(x[0], x[1]))
 tfidfData = titles.zip(tfidf).toDF(["label", "features"])
 #idf.rdd.saveAsTextFile("idf_model")
 #sc.parallelize(idf.idf()).coalesce(1).saveAsTextFile("idf")
@@ -52,8 +49,11 @@ tfidfData = titles.zip(tfidf).toDF(["label", "features"])
 query = parse((0, "location_id organization_id name latitude longitude bbl bin cd council nta tract"))[1]
 queryTF = hashingTF.transform(query)
 queryTFIDF = normalizer.transform(idf.transform(queryTF))
-queryRelevance = tfidfData.rdd.map(lambda x: (x[0], x[1].dot(queryTFIDF))).sortBy(lambda x: -x[1])
-queryRelevance.saveAsTextFile("tfidf_column.out")
+queryRelevance = tfidfData.rdd.map(lambda x: (x[0], float(x[1].dot(queryTFIDF)))).sortBy(lambda x: -x[1]).filter(lambda x: x[1] > 0)
+if (queryRelevance.isEmpty()):
+    print("nothing matched")
+else:
+    queryRelevance.saveAsTextFile("tfidf_column.out")
 
 '''
 def createPairs(doc):

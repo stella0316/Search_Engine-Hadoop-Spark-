@@ -107,12 +107,16 @@ def column_search(words,row_filter):
     query = parse((0, words))[1]
     queryTF = hashingTF.transform(query)
     queryTFIDF = normalizer.transform(idf.transform(queryTF))
-    queryRelevance = tfidfData.rdd.map(lambda x: (x[0], float(x[1].dot(queryTFIDF)))).sortBy(lambda x: -x[1])
+    queryRelevance = tfidfData.rdd.map(lambda x: (x[0], float(x[1].dot(queryTFIDF)))).sortBy(lambda x: -x[1]).filter(lambda x: x[1] > 0)
     queryRelevance = queryRelevance.toDF(["Doc_ID", "scores"])
     queryRelevance = queryRelevance.join(table_desc,queryRelevance.Doc_ID == table_desc.Doc_ID).select(table_desc.Doc_ID, queryRelevance.scores, table_desc.Columns)
-    queryRelevance = queryRelevance.join(master_index, master_index.Doc_ID==queryRelevance.Doc_ID).select(master_index.Table_Name, queryRelevance.Columns, queryRelevance.scores)
-    queryRelevance = queryRelevance.rdd.filter(lambda x: int(x['Table_Length']) >= int(min_row)).toDF()
-    queryRelevance.show()
+    queryRelevance = queryRelevance.join(master_index, master_index.Doc_ID==queryRelevance.Doc_ID).select(master_index.Table_Name,master_index.Table_Length, queryRelevance.Columns, queryRelevance.scores)
+    queryRelevance = queryRelevance.rdd.filter(lambda x: int(x['Table_Length']) >= int(min_row))
+    if (queryRelevance.isEmpty()):
+        print("Sorry, nothing matched in column search, please try a different keyword")
+    else:
+        print("Here is your column search result")
+        queryRelevance.toDF().show()
     '''
 	if row_filter == 'n' or row_filter == 'N':
 		min_row = 0
