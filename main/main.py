@@ -110,7 +110,7 @@ def column_search(words,row_filter):
     queryRelevance = tfidfData.rdd.map(lambda x: (x[0], float(x[1].dot(queryTFIDF)))).sortBy(lambda x: -x[1])
     queryRelevance = queryRelevance.toDF(["Doc_ID", "scores"])
     queryRelevance = queryRelevance.join(table_desc,queryRelevance.Doc_ID == table_desc.Doc_ID).select(table_desc.Doc_ID, queryRelevance.scores, table_desc.Columns)
-    queryRelevance = queryRelevance.join(master_index, master_index.Doc_ID==queryRelevance.Doc_ID).select(queryRelevance.Doc_ID, master_index.Table_Name, queryRelevance.Columns, queryRelevance.scores, master_index.Table_Length)
+    queryRelevance = queryRelevance.join(master_index, master_index.Doc_ID==queryRelevance.Doc_ID).select(master_index.Table_Name, queryRelevance.Columns, queryRelevance.scores)
     queryRelevance = queryRelevance.rdd.filter(lambda x: int(x['Table_Length']) >= int(min_row)).toDF()
     queryRelevance.show()
     '''
@@ -205,7 +205,7 @@ def topic_search(words,row_filter):
 		ID_list.append(IDs)
 
 	if len(ID_list) == 0:
-		print("Sorry, nothing matched, please try a different keyword")
+		print("Sorry, nothing matched in topic search, please try a different keyword")
 	else: 
 		re = set(ID_list[0])
 		for s in ID_list[1:]:
