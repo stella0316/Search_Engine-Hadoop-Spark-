@@ -12,6 +12,10 @@ from operator import add
 from collections import Counter
 import pandas as pd
 from itertools import chain
+import nltk
+
+porter = nltk.stem.PorterStemmer()
+stopWordList = set(nltk.corpus.stopwords.words("english"))
 
 sc = SparkContext()
 
@@ -58,8 +62,10 @@ def create_pairs(pair):
   df = df.str.lower() #convert to lower case
   df = df.str.split()
   word_list = df.tolist()
+  #word_list = [porter.stem(x) for x in word_list if x not in stopWordList]
   words = list(chain.from_iterable(word_list))
-  #words = map(lambda x: x.strip(),words)#remove trailing whitespaces                                                                      
+  words = [porter.stem(x) for x in words if x not in stopWordList]
+	#words = map(lambda x: x.strip(),words)#remove trailing whitespaces                                                                      
   #words = filter(None, words)#remove Nans                                                                                                 
   counter = Counter(words)     
 
