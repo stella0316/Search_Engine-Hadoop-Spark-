@@ -222,7 +222,7 @@ def topic_search(words,row_filter):
 			print("Here is your topic search result")
 			result = table.join(table_desc,table.Doc_ID == table_desc.Doc_ID).select(table.Table_Name,table_desc.Category, table_desc.Description).show()  
 		else:
-			print("Sorry, nothing matched, please try a different keyword")
+			print("Sorry, nothing matched in topic search, please try a different keyword")
     
 
 
