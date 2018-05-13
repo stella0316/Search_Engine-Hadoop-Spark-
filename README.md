@@ -9,7 +9,8 @@ On Dumbo, run
 
 ```
 hadoop fs -put src/data
-python src/prompt.py
+cd src
+python prompt.py
 ```
 
 
@@ -18,6 +19,7 @@ python src/prompt.py
 To run the search engine locally on a machine with PySpark installed, run
 
 ```
+cd src
 python src/prompt.py
 ```
 
