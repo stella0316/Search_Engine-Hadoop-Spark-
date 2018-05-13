@@ -1,6 +1,6 @@
 # Search Engine for Structured Data
 
-We built an search engine for structured data enabling title, column, content and topic search with customized filters. As an example, we use a subset of [NYCOpenData](https://opendata.cityofnewyork.us/) datasets to how it makes seaching over structured data more productive and efficient.
+We have built a search engine for structured data enabling title, column, content and topic search with customized filters. As an example, we use a subset of [NYCOpenData](https://opendata.cityofnewyork.us/) datasets to show how it makes seaching over structured data more productive and efficient.
 
 ## Running the search engine on DFS
 
