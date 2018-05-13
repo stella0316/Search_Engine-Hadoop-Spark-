@@ -20,7 +20,7 @@ To run the search engine locally on a machine with PySpark installed, run
 
 ```
 cd src
-python src/prompt.py
+python prompt.py
 ```
 
 
